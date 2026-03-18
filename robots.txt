@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://singularityrd.com/sitemap.xml
+
+# Block access to development/admin files
+Disallow: /_*
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$

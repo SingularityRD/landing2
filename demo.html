@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Singularity - AutoSecOps Dashboard</title>
+    <link rel="icon" href="singularityfavicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --white: #1a1a1a;
+            --off-white: rgba(26, 26, 26, 0.85);
+            --muted: rgba(26, 26, 26, 0.55);
+            --btn-bg: rgba(26, 26, 26, 0.95);
+            --btn-hover: #1a1a1a;
+            --orange-45: #f97316;
+            --green-45: #10b981;
+            --red-45: #ef4444;
+            --blue-45: #3b82f6;
+            --purple-45: #a78bfa;
+            --dark-bg: #ffffff;
+            --card-bg: rgba(248, 248, 248, 0.8);
+            --border-color: rgba(0, 0, 0, 0.1);
+        }
+        html, body {
+            width: 100%; height: 100%; font-family: 'Inter', sans-serif;
+            background: #ffffff; 
+            color: #1a1a1a; overflow-x: hidden;
+        }
+
+        /* ─── Navigation ── */
+        nav { 
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 40px; height: 64px; background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .nav__left { display: flex; align-items: center; gap: 36px; }
+        .nav__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); }
+        .nav__logo-icon { width: 56px; height: 56px; }
+        .nav__logo-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+        .nav__right { display: flex; align-items: center; gap: 16px; }
+        .nav__user { 
+            display: flex; align-items: center; gap: 8px; padding: 8px 16px;
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;
+            font-size: 14px; color: var(--off-white);
+        }
+
+        /* ─── Main Dashboard Layout ── */
+        .dashboard { 
+            padding: 80px 40px 40px; max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 320px; gap: 24px;
+        }
+
+        .main-content { display: flex; flex-direction: column; gap: 24px; }
+
+        /* ─── Alert Banner ── */
+        .alert-banner {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(249, 115, 22, 0.1));
+            border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 12px;
+            padding: 16px 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 16px;
+        }
+        .alert-icon { width: 24px; height: 24px; color: var(--orange-45); flex-shrink: 0; }
+        .alert-content { flex: 1; }
+        .alert-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+        .alert-desc { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+        /* ─── Hero Section ── */
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-bg), #1a1a2e);
+            border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 40px; margin-bottom: 24px;
+        }
+
+        .hero-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
+        .hero-title {
+            font-family: "Playfair Display", Georgia, serif; font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500; line-height: 1.1; color: var(--white);
+            margin-bottom: 8px;
+        }
+        .hero-title em { font-style: italic; color: var(--orange-45); }
+        .hero-subtitle { font-size: 16px; color: var(--muted); line-height: 1.5; max-width: 600px; }
+        .hero-actions { display: flex; gap: 12px; }
+        .btn-primary {
+            background: var(--orange-45); color: var(--dark-bg); padding: 12px 24px;
+            border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s; cursor: pointer;
+        }
+        .btn-primary:hover { background: #ea580c; transform: translateY(-1px); }
+        .btn-secondary {
+            background: transparent; color: var(--off-white); padding: 12px 24px;
+            border: 1px solid var(--border-color); border-radius: 8px;
+            font-size: 14px; font-weight: 500; text-decoration: none;
+            transition: all 0.2s; cursor: pointer;
+        }
+        .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255, 255, 255, 0.2); }
+
+        /* ─── Stats Grid ── */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 24px;
+        }
+        .stat-card {
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px;
+            padding: 24px; transition: all 0.3s ease;
+        }
+        .stat-card:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.2); }
+        .stat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .stat-title { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .stat-icon { width: 20px; height: 20px; opacity: 0.6; }
+        .stat-value {
+            font-family: "Outfit", sans-serif; font-size: clamp(24px, 3vw, 36px);
+            font-weight: 600; color: var(--white); margin-bottom: 8px;
+        }
+        .stat-label { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+        .stat-trend {
+            display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px;
+            border-radius: 6px; font-size: 12px; font-weight: 500;
+        }
+        .trend-up { background: rgba(16, 185, 129, 0.2); color: var(--green-45); }
+        .trend-down { background: rgba(239, 68, 68, 0.2); color: var(--red-45); }
+
+        /* ─── Threat Detection Section ── */
+        .threat-section {
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 32px; margin-bottom: 24px;
+        }
+        .section-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+        }
+        .section-icon { width: 24px; height: 24px; color: var(--orange-45); }
+        .section-title {
+            font-family: "Outfit", sans-serif; font-size: 20px; font-weight: 600; color: var(--white);
+        }
+        .threat-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+        }
+        .threat-item {
+            display: flex; align-items: center; gap: 12px; padding: 16px;
+            background: rgba(255, 255, 255, 0.02); border-radius: 8px;
+            border-left: 3px solid;
+        }
+        .threat-high { border-left-color: var(--red-45); }
+        .threat-medium { border-left-color: var(--orange-45); }
+        .threat-low { border-left-color: var(--green-45); }
+        .threat-details { flex: 1; }
+        .threat-name { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+        .threat-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+        .threat-confidence {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; margin-left: 8px;
+        }
+        .confidence-critical { background: rgba(239, 68, 68, 0.2); color: var(--red-45); }
+        .confidence-high { background: rgba(249, 115, 22, 0.2); color: var(--orange-45); }
+        .confidence-medium { background: rgba(59, 130, 246, 0.2); color: var(--blue-45); }
+        .confidence-low { background: rgba(16, 185, 129, 0.2); color: var(--green-45); }
+
+        /* ─── Sidebar ── */
+        .sidebar { display: flex; flex-direction: column; gap: 24px; }
+        .sidebar-card {
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 24px;
+        }
+        .compliance-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .compliance-item:last-child { border-bottom: none; }
+        .compliance-name { font-size: 14px; color: var(--off-white); }
+        .compliance-status {
+            display: flex; align-items: center; gap: 6px; padding: 4px 12px;
+            border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .status-compliant { background: rgba(16, 185, 129, 0.2); color: var(--green-45); }
+        .status-in-progress { background: rgba(249, 115, 22, 0.2); color: var(--orange-45); }
+
+        /* ─── Live Telemetry ── */
+        .telemetry-section {
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px;
+            padding: 32px;
+        }
+        .telemetry-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+        }
+        .telemetry-item {
+            text-align: center; padding: 16px; background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+        }
+        .telemetry-value {
+            font-family: "Outfit", sans-serif; font-size: 24px; font-weight: 600;
+            color: var(--white); margin-bottom: 4px;
+        }
+        .telemetry-label { font-size: 12px; color: var(--muted); }
+
+        /* ─── Responsive ── */
+        @media (max-width: 1200px) {
+            .dashboard { grid-template-columns: 1fr; }
+            .sidebar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .dashboard { padding: 80px 20px 20px; }
+            .hero-section { padding: 24px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .threat-grid { grid-template-columns: 1fr; }
+            .telemetry-grid { grid-template-columns: 1fr; }
+            .sidebar { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav__left">
+            <a href="index.html" class="nav__logo">
+                <img src="singularityfavicon.png" alt="Singularity" class="nav__logo-icon" />
+                <span class="nav__logo-text">Singularity</span>
+            </a>
+        </div>
+        <div class="nav__right">
+            <div class="nav__user">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0 0-4H8a4 4 0 0 0 0-4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Admin User
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <div class="main-content">
+            <!-- Alert Banner -->
+            <div class="alert-banner">
+                <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a4 4 0 0 0 1.71 3.71l6.47 6.47L19 14.12a4 4 0 0 0 3.71-3.71l6.47-6.47A4 4 0 0 0 10.29 3.86z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <div class="alert-content">
+                    <div class="alert-title">Critical vulnerabilities discovered — impacting over 1 billion users</div>
+                    <div class="alert-desc">Amazon · Alibaba · Oracle · Huawei · Red Hat · Citrix · BitDefender · Rackspace · Ubuntu · Zynga · Namecheap · Debian · CentOS · SoftLayer · Novell</div>
+                </div>
+            </div>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-header">
+                    <div>
+                        <h1 class="hero-title">Beyond security.<br /><em>Singularity.</em></h1>
+                        <p class="hero-subtitle">
+                            Unified device management, predictive maintenance, and autonomous security. 
+                            The platform protecting the world's most critical infrastructure.
+                        </p>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn-primary">Deploy AutoSecOps →</button>
+                        <button class="btn-secondary">Request Assessment</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-title">Security Posture</div>
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-value">94/100</div>
+                    <div class="stat-label">Overall Score</div>
+                    <div class="stat-trend trend-up">↑ 12 points this quarter</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-title">Endpoints Protected</div>
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        </svg>
+                    </div>
+                    <div class="stat-value">10,482</div>
+                    <div class="stat-label">99.8% coverage</div>
+                    <div class="stat-trend trend-up">↑ 1.2% this month</div>
+                </div>
+            </div>
+
+            <!-- Threat Detection Section -->
+            <section class="threat-section">
+                <div class="section-header">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l-6 6v3h9l3-3"></path>
+                        <path d="M22 12l-4-4-6 6-3-3-6 6"></path>
+                    </svg>
+                    <h2 class="section-title">Active Threat Detection</h2>
+                </div>
+                <div class="threat-grid">
+                    <div class="threat-item threat-high">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Malicious Base64 Payload
+                                <span class="threat-confidence confidence-critical">Critical 99.9%</span>
+                            </div>
+                            <div class="threat-desc">
+                                Detected anomalous encoding patterns in API gateway traffic
+                            </div>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-medium">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Unusual API Gateway Volume
+                                <span class="threat-confidence confidence-high">High 84%</span>
+                            </div>
+                            <div class="threat-desc">
+                                Spike in authentication requests from unknown sources
+                            </div>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-low">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Anomalous Login Location
+                                <span class="threat-confidence confidence-medium">Low 72%</span>
+                            </div>
+                            <div class="threat-desc">
+                                Geographic deviation from established access patterns
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Telemetry Section -->
+            <section class="telemetry-section">
+                <div class="section-header">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9h-2l-3-9h-2"></path>
+                        <path d="M5.12 2.84a.83.83 0 0 0 0-.74.74L3.71 8.62a.83.83 0 0 0 .74.74L9.63 2.84a.83.83 0 0 0 0-.74.74L6.26 8.62a.83.83 0 0 0 .74.74L12.16 2.84a.83.83 0 0 0 0-.74.74L8.79 8.62a.83.83 0 0 0 .74.74L14.7 2.84a.83.83 0 0 0 0-.74.74L11.33 8.62a.83.83 0 0 0 .74.74L17.24 2.84a.83.83 0 0 0 0-.74.74L13.87 8.62a.83.83 0 0 0 .74.74L19.78 2.84a.83.83 0 0 0 0-.74.74L16.41 8.62a.83.83 0 0 0 .74.74L22.32 2.84a.83.83 0 0 0 0-.74.74"></path>
+                    </svg>
+                    <h2 class="section-title">Live Telemetry Stream</h2>
+                </div>
+                <div class="telemetry-grid">
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">450k+</div>
+                        <div class="telemetry-label">Events / Sec</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">18</div>
+                        <div class="telemetry-label">Active Neural Nets</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">0.00%</div>
+                        <div class="telemetry-label">False Positives</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">75ms</div>
+                        <div class="telemetry-label">Avg. Response Time</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Attack Simulation Results -->
+            <section class="threat-section">
+                <div class="section-header">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l9-11"></path>
+                        <path d="M22 12l-4-4-6 6-3-3-6 6"></path>
+                    </svg>
+                    <h2 class="section-title">Attack Simulation Results</h2>
+                </div>
+                <div class="threat-grid">
+                    <div class="threat-item threat-high">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Neutralization
+                                <span class="threat-confidence confidence-critical">100%</span>
+                            </div>
+                            <div class="threat-desc">Zero lateral movement</div>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-medium">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Zero-days blocked
+                                <span class="threat-confidence confidence-high">14</span>
+                            </div>
+                            <div class="threat-desc">Novel indicators detected</div>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-low">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Attack Vector
+                                <span class="threat-confidence confidence-critical">99.8%</span>
+                            </div>
+                            <div class="threat-desc">Lateral Movement Attempt (SSH)</div>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-medium">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Ransomware Payload Execution
+                                <span class="threat-confidence confidence-critical">100%</span>
+                            </div>
+                            <div class="threat-desc">Contained</div>
+                        </div>
+                    </div>
+                    <div class="threat-item threat-low">
+                        <div class="threat-details">
+                            <div class="threat-name">
+                                Zero-day Privilege Escalation
+                                <span class="threat-confidence confidence-high">92%</span>
+                            </div>
+                            <div class="threat-desc">Isolated</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Predictive Maintenance Section -->
+            <section class="telemetry-section">
+                <div class="section-header">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l-6 6v3h9l3-3"></path>
+                        <path d="M22 12l-4-4-6 6-3-3-6 6"></path>
+                    </svg>
+                    <h2 class="section-title">Predictive Maintenance</h2>
+                </div>
+                <div class="telemetry-grid">
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">3</div>
+                        <div class="telemetry-label">Expected Failures</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">Next 14 days</div>
+                        <div class="telemetry-label">Prediction Window</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">Low</div>
+                        <div class="telemetry-label">Vuln Exposure</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-value">Decreased 14%</div>
+                        <div class="telemetry-label">Risk Level</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Continuous Compliance Section -->
+            <div class="sidebar-card">
+                <div class="section-header">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l-6 6v3h9l3-3"></path>
+                        <path d="M22 12l-4-4-6 6-3-3-6 6"></path>
+                    </svg>
+                    <h3 class="section-title">Continuous Compliance</h3>
+                </div>
+                <div class="compliance-item">
+                    <span class="compliance-name">SOC 2 Type II</span>
+                    <span class="compliance-status status-compliant">Certified</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="compliance-name">NIS2 Directive</span>
+                    <span class="compliance-status status-compliant">98% Compliant</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="compliance-name">EU AI Act</span>
+                    <span class="compliance-status status-in-progress">87% In Progress</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="compliance-name">CMMC Level 3</span>
+                    <span class="compliance-status status-compliant">100% Mapped</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="compliance-name">Controls Assessed</span>
+                    <span class="compliance-status status-compliant">412</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="compliance-name">Exceptions</span>
+                    <span class="compliance-status status-compliant">0</span>
+                </div>
+                <div class="compliance-item">
+                    <span class="compliance-name">Zero failures</span>
+                    <span class="compliance-status status-compliant">Found</span>
+                </div>
+            </div>
+
+            <!-- Predictive Insights -->
+            <div class="sidebar-card">
+                <div class="section-header">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <h3 class="section-title">Predictive Insights</h3>
+                </div>
+                <div class="telemetry-item">
+                    <div class="telemetry-value">Hardware Degradation</div>
+                    <div class="telemetry-label">Replace primary cluster cooling unit</div>
+                </div>
+                <div class="telemetry-item">
+                    <div class="telemetry-value">Security Vulnerability</div>
+                    <div class="telemetry-label">Patch zero-day in edge router firmware</div>
+                </div>
+                <div class="telemetry-item">
+                    <div class="telemetry-value">Resource Exhaustion</div>
+                    <div class="telemetry-label">Resize database instance before peak load</div>
+                </div>
+                <div class="telemetry-item">
+                    <div class="telemetry-value">Policy Drift</div>
+                    <div class="telemetry-label">Re-align IAM roles with Principle of Least Privilege</div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="sidebar-card">
+                <div class="section-header">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 12 14"></polyline>
+                    </svg>
+                    <h3 class="section-title">System Health</h3>
+                </div>
+                <div class="telemetry-item">
+                    <div class="telemetry-value" style="color: var(--green-45);">99.9%</div>
+                    <div class="telemetry-label">Uptime</div>
+                </div>
+                <div class="telemetry-item">
+                    <div class="telemetry-value">2.4%</div>
+                    <div class="telemetry-label">14-day failure prediction</div>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

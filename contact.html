@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Singularity Security Platform</title>
+  <meta name="description" content="Get in touch with Singularity. Contact our sales team, request a demo, or send us a message about our AI-powered security platform." />
+  <meta name="keywords" content="contact Singularity, sales inquiry, demo request, security consultation, AI security contact" />
+  <meta name="author" content="Singularity Research & Development" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0d1520" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://singularityrd.com/contact.html" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://singularityrd.com/contact.html" />
+  <meta property="og:title" content="Contact Us — Singularity Security Platform" />
+  <meta property="og:description" content="Get in touch with Singularity. Contact our sales team, request a demo, or send us a message." />
+  <meta property="og:image" content="https://singularityrd.com/images/og-contact.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Contact Singularity Security Platform" />
+  <meta property="og:site_name" content="Singularity" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@singularityrd" />
+  <meta name="twitter:creator" content="@singularityrd" />
+  <meta name="twitter:url" content="https://singularityrd.com/contact.html" />
+  <meta name="twitter:title" content="Contact Us — Singularity Security Platform" />
+  <meta name="twitter:description" content="Get in touch with Singularity. Contact our sales team, request a demo." />
+  <meta name="twitter:image" content="https://singularityrd.com/images/og-contact.jpg" />
+  <meta name="twitter:image:alt" content="Contact Singularity Security Platform" />
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Structured Data - ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Singularity",
+    "url": "https://singularityrd.com/contact.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Singularity",
+      "email": "info@singularityrd.com",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressCountry": "US"
+      }
+    }
+  }
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --off-white: rgba(255, 255, 255, 0.85);
+      --muted: rgba(255, 255, 255, 0.55);
+      --btn-bg: rgba(255, 255, 255, 0.95);
+      --btn-hover: #fff;
+      --blue-45: #3b82f6;
+    }
+    html, body {
+      width: 100%; height: 100%; font-family: 'Inter', sans-serif;
+      background: #0d1520; color: var(--white); overflow-x: hidden;
+    }
+    
+    /* ── Navbar ── */
+    nav { position: relative; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav__left { display: flex; align-items: center; gap: 36px; }
+    .nav__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); }
+    .nav__logo-icon { width: 28px; height: 28px; }
+    .nav__logo-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+    .nav__links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav__links li a { display: flex; gap: 4px; padding: 6px 12px; border-radius: 8px; color: var(--off-white); text-decoration: none; font-size: 14px; transition: 0.2s; }
+    .nav__links li a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav__right { display: flex; align-items: center; gap: 12px; }
+    .btn-ghost { background: transparent; border: none; color: var(--off-white); font-size: 14px; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: 0.2s; text-decoration: none; }
+    .btn-ghost:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .btn-primary { background: var(--btn-bg); color: #111; font-size: 14px; font-weight: 500; padding: 8px 20px; border-radius: 20px; text-decoration: none; transition: 0.2s; }
+    .btn-primary:hover { background: var(--btn-hover); transform: translateY(-1px); }
+    
+    /* ── Dropdowns ── */
+    .nav__item { position: relative; }
+    .nav__dropdown { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px); width: 320px; background: rgba(18,24,36,0.82); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 10px; opacity: 0; pointer-events: none; transition: 0.18s ease; z-index: 200; }
+    .nav__item:hover .nav__dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .dropdown__item { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; cursor: pointer; text-decoration: none; transition: 0.15s; }
+    .dropdown__item:hover { background: rgba(255,255,255,0.07); }
+    .dropdown__title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.92); }
+    .dropdown__desc { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.45); line-height: 1.45; }
+    
+    /* ── Mobile Hamburger ── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 300; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250; background: rgba(9, 9, 15, 0.97); backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu a { display: block; color: var(--white); text-decoration: none; font-size: 20px; font-weight: 500; padding: 14px 24px; border-radius: 12px; transition: background 0.2s; text-align: center; }
+    .mobile-menu a:hover { background: rgba(255, 255, 255, 0.08); }
+    .mobile-menu__cta { margin-top: 20px; background: rgba(255, 255, 255, 0.92) !important; color: #111 !important; font-weight: 600 !important; padding: 14px 32px !important; border-radius: 28px !important; }
+    
+    /* ── Hero Section ── */
+    .hero-section { padding: 120px 80px; display: flex; flex-direction: column; align-items: center; position: relative; background: linear-gradient(135deg, #0d1520 0%, #1a1a2e 100%); }
+    .hero-inner { width: 100%; max-width: 1200px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-45); margin-bottom: 32px; }
+    .hero-title { font-family: 'Outfit', sans-serif; font-size: clamp(48px, 6vw, 72px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .hero-title em { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; color: var(--blue-45); }
+    .hero-subtitle { font-size: clamp(18px, 2vw, 22px); font-weight: 300; color: var(--muted); max-width: 800px; margin: 0 auto 48px; line-height: 1.6; }
+    
+    /* ── Contact Section ── */
+    .contact-section { padding: 80px 80px; }
+    .contact-inner { max-width: 1200px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
+    .contact-info h3 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 500; margin-bottom: 24px; }
+    .contact-info p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-icon { font-size: 24px; flex-shrink: 0; }
+    .contact-text strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .contact-text span { font-size: 14px; color: var(--muted); }
+    
+    .contact-form { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 48px; }
+    .form-group { margin-bottom: 24px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--blue-45); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .submit-btn { width: 100%; background: linear-gradient(135deg, var(--blue-45), #6366f1); color: white; border: none; padding: 16px 32px; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,0.3); }
+    
+    /* ── Footer ── */
+    .site-footer { padding-top: 80px; padding-bottom: 120px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 120px; position: relative; }
+    .site-footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: 0.2s; }
+    .site-footer a:hover { color: #fff; }
+    
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .hamburger { display: block; }
+      .hero-section { padding: 60px 20px; }
+      .contact-section { padding: 40px 20px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .contact-form { padding: 32px 24px; }
+    }
+  </style>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo" aria-label="Singularity Home">
+          <span class="nav__logo-icon"><svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75"/><circle cx="14" cy="14" r="2.5" fill="white"/></svg></span>
+          <span class="nav__logo-text">Singularity</span>
+        </a>
+        <ul class="nav__links" role="list">
+          <li class="nav__item">
+            <a href="#" id="productsBtn">Products <span class="chevron">▾</span></a>
+            <div class="nav__dropdown" id="productsDropdown">
+              <a class="dropdown__item" href="products/access-graph.html"><span class="dropdown__title">Access Graph (ReBAC)</span><span class="dropdown__desc">Zero-trust identity, relationship-based authorization</span></a>
+              <a class="dropdown__item" href="products/identity.html"><span class="dropdown__title">Singularity Identity (IAM)</span><span class="dropdown__desc">Zero-trust identity, access, and authentication</span></a>
+              <a class="dropdown__item" href="products/neuralwaf.html"><span class="dropdown__title">NeuralWAF</span><span class="dropdown__desc">ML-first web application firewall</span></a>
+              <a class="dropdown__item" href="products/agent-runtime.html"><span class="dropdown__title">Agent Runtime</span><span class="dropdown__desc">Sandboxed AI execution environment</span></a>
+              <a class="dropdown__item" href="products/autopatch.html"><span class="dropdown__title">AutoPatch</span><span class="dropdown__desc">AI-generated vulnerability fixes</span></a>
+              <a class="dropdown__item" href="products/code-provenance.html"><span class="dropdown__title">Code Provenance</span><span class="dropdown__desc">AI vs human code tracking</span></a>
+            </div>
+          </li>
+          <li class="nav__item"><a href="pricing.html">Pricing</a></li>
+          <li class="nav__item"><a href="papers.html">Research</a></li>
+          <li class="nav__item">
+            <a href="#" id="companyBtn">Company <span class="chevron">▾</span></a>
+            <div class="nav__dropdown" id="companyDropdown">
+              <a class="dropdown__item" href="blog.html"><span class="dropdown__title">Blog</span></a>
+              <a class="dropdown__item" href="about.html"><span class="dropdown__title">About Us</span></a>
+              <a class="dropdown__item" href="gender-equity.html"><span class="dropdown__title">Gender Equity</span><span class="dropdown__desc">Diversity & inclusion initiatives</span></a>
+              <a class="dropdown__item" href="careers.html"><span class="dropdown__title">Careers</span></a>
+              <a class="dropdown__item" href="contact.html"><span class="dropdown__title">Contact</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__right" style="justify-content: flex-end;">
+        <a href="mailto:info@singularityrd.com" class="btn-primary">Contact Sales</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Platform</a>
+    <a href="products/access-graph.html">Products</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="papers.html">Research</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="gender-equity.html">Gender Equity</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+    <a href="mailto:info@singularityrd.com" class="mobile-menu__cta">Contact Sales</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <div class="hero-badge">📞 Get in Touch</div>
+        <h1 id="hero-heading" class="hero-title">Let's Start a <em>Conversation</em></h1>
+        <p class="hero-subtitle">Have questions about our platform? Want to schedule a demo? Our team is here to help you understand how Singularity can protect your organization.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <div class="contact-inner">
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <h3>Ways to Reach Us</h3>
+            <p>We respond to all inquiries within 24 hours. For urgent security matters, please call us directly.</p>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-text">
+                  <strong>Email</strong>
+                  <span>info@singularityrd.com</span>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-text">
+                  <strong>Phone</strong>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-text">
+                  <strong>Office</strong>
+                  <span>123 Security Lane<br>San Francisco, CA 94105</span>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">🕐</div>
+                <div class="contact-text">
+                  <strong>Business Hours</strong>
+                  <span>Monday - Friday: 9am - 6pm PST</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <form action="#" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required placeholder="John" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required placeholder="Doe" />
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" required placeholder="john@company.com" />
+              </div>
+              
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your Company" />
+              </div>
+              
+              <div class="form-group">
+                <label for="interest">I'm interested in...</label>
+                <select id="interest" name="interest">
+                  <option value="">Select an option</option>
+                  <option value="demo">Product Demo</option>
+                  <option value="pricing">Pricing Information</option>
+                  <option value="technical">Technical Questions</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your security needs..."></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 500px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; background: url('../footer.png') top center/cover no-repeat; opacity: 0.35; z-index: 0; pointer-events: none;" aria-hidden="true"></div>
+    
+    <div class="footer-inner" style="position: relative; z-index: 10; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 80px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px;">
+        <div>
+          <a href="index.html" class="nav__logo" style="margin-bottom: 24px; display: inline-flex;">
+            <span class="nav__logo-icon" style="width: 24px; height: 24px;">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75"/><circle cx="14" cy="14" r="2.5" fill="white"/></svg>
+            </span>
+            <span class="nav__logo-text" style="font-size: 16px;">Singularity</span>
+          </a>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 24px; max-width: 250px;">Autonomous security for age of autonomous attacks. Built by security researchers.</p>
+          <a href="mailto:info@singularityrd.com" style="display: block; color: var(--white); text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 8px;">info@singularityrd.com</a>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #10b981;"><span style="display: inline-block; width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>All systems operational</div>
+        </div>
+        
+        <div>
+          <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="about.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">About</a></li>
+            <li><a href="blog.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Blog</a></li>
+            <li><a href="gender-equity.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Gender Equity</a></li>
+            <li><a href="careers.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Careers</a></li>
+            <li><a href="contact.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="papers.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Research Papers</a></li>
+            <li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Documentation</a></li>
+            <li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">API Reference</a></li>
+            <li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Security</a></li>
+            <li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">System Status</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Legal</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="privacy.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Terms of Service</a></li>
+            <li><a href="cookies.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Cookie Policy</a></li>
+            <li><a href="gdpr.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">GDPR Compliance</a></li>
+            <li><a href="sla.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Service Level Agreement</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1200px; padding: 0 40px; z-index: 10;">
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.4);">
+          <span>Copyright &copy; 2025 Singularity Research & Development. All rights reserved.</span>
+          <div style="display: flex; gap: 20px;">
+            <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+            <a href="terms.html" style="color: inherit; text-decoration: none;">Terms of Service</a>
+            <a href="cookies.html" style="color: inherit; text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    // Mobile Hamburger Menu
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let scrollY = 0;
+    
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('open');
+        
+        if (!isOpen) {
+          scrollY = window.scrollY;
+          document.body.style.overflow = 'hidden';
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${scrollY}px`;
+          document.body.style.width = '100%';
+        } else {
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollY);
+        }
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+      });
+      
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollY);
+        });
+      });
+    }
+    
+    // Dropdowns for desktop
+    const navItems = document.querySelectorAll('.nav__item');
+    navItems.forEach(item => {
+      const btn = item.querySelector('a');
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          if (window.innerWidth > 768) {
+            e.preventDefault();
+            const isOpen = item.classList.contains('open');
+            navItems.forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+          }
+        });
+      }
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav__item')) {
+        navItems.forEach(i => i.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>
+

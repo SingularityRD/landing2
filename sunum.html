@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Singularity - Market Opportunity</title>
+    <link rel="icon" href="singularityfavicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --white: #ffffff;
+            --off-white: rgba(255, 255, 255, 0.85);
+            --muted: rgba(255, 255, 255, 0.55);
+            --btn-bg: rgba(255, 255, 255, 0.95);
+            --btn-hover: #fff;
+            --orange-45: #f97316;
+        }
+        html, body {
+            width: 100%; height: 100%; font-family: 'Inter', sans-serif;
+            background: #09090f; color: var(--white); overflow-x: hidden;
+        }
+
+        /* ─── GIGA BLOCKS (Feature + Canvas combined) ──────────── */
+        .giga-section {
+            background: #09090f;
+            padding: 0 80px 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .giga-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+
+        /* Top half: Header + Features */
+        .giga-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .giga-header {
+            max-width: 400px;
+        }
+
+        .giga-header__label {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--orange-45);
+            margin-bottom: 24px;
+        }
+
+        .giga-header__label-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--orange-45);
+            flex-shrink: 0;
+        }
+
+        .giga-header__headline {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(36px, 4vw, 56px);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        /* Right feature cards */
+        .giga-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            width: 650px;
+        }
+
+        .giga-feature {
+            padding: 0 20px 20px;
+            border-left: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .giga-feature__icon {
+            width: 14px;
+            height: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 16px;
+        }
+
+        .giga-feature__icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .giga-feature__title {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 8px;
+        }
+
+        .giga-feature__desc {
+            font-size: 12px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.5;
+        }
+
+        /* Bottom half: Bordered Box */
+        .giga-box {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .giga-box__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .giga-box__icon {
+            width: 24px;
+            height: 24px;
+            color: var(--orange-45);
+        }
+
+        .giga-box__title {
+            font-family: "Outfit", sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        /* Market sizing section */
+        .market-sizing {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .market-card {
+            text-align: center;
+            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+        }
+
+        .market-value {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 600;
+            color: var(--orange-45);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .market-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .market-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.5;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th {
+            font-family: "Outfit", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: left;
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .autosecops-col {
+            background: rgba(16, 185, 129, 0.05);
+            font-weight: 600;
+        }
+
+        .comparison-table .autosecops-col.highlight-orange {
+            color: var(--orange-45);
+            font-weight: 700;
+        }
+
+        .comparison-table .check {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .comparison-table .cross {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        /* Business model section */
+        .business-model {
+            margin-top: 60px;
+            padding: 32px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+        }
+
+        .business-model__title {
+            font-family: "Outfit", sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 16px;
+        }
+
+        .business-model__desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .business-model__highlight {
+            font-size: 16px;
+            color: var(--white);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 1024px) {
+            .giga-section {
+                padding-left: 40px !important;
+                padding-right: 40px !important;
+            }
+
+            .giga-top {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .giga-features {
+                width: 100% !important;
+            }
+
+            .giga-box {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+
+            .market-sizing {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .giga-section {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .giga-top {
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            .giga-features {
+                width: 100% !important;
+                grid-template-columns: 1fr !important;
+            }
+
+            .giga-box {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+                padding: 24px !important;
+            }
+
+            .market-sizing {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ── Giga Blocks Wrapper (with background) ── -->
+    <div class="giga-wrapper" style="position: relative; background: #09090f; z-index: 10">
+        <!-- Background Layer -->
+        <div
+            style="
+                position: absolute;
+                inset: 0;
+                background: url('start frame.png') top center/cover no-repeat;
+                opacity: 0.15;
+                z-index: -1;
+            "
+        ></div>
+
+        <!-- ── Giga Block (Market Opportunity) ── -->
+        <section class="giga-section" style="background: transparent">
+            <div class="giga-inner">
+                <!-- Top Half: Header & Features -->
+                <div class="giga-top">
+                    <div class="giga-header">
+                        <div class="giga-header__label">
+                            <span class="giga-header__label-dot"></span>
+                            MARKET OPPORTUNITY
+                        </div>
+                        <h2 class="giga-header__headline" style="font-size: clamp(32px, 4.5vw, 48px); line-height: 1.15; max-width: 500px;">
+                            $93B<br />market, one agent to<br />own it
+                        </h2>
+                        <p style="font-size: 16px; color: rgba(255, 255, 255, 0.65); line-height: 1.6; margin-top: 16px;">
+                            CrowdStrike and SentinelOne are built for IT endpoints.<br />
+                            They don't support RTOS, IoT, OT, or satellites. We do.
+                        </p>
+                    </div>
+
+                    <div class="giga-features">
+                        <div class="giga-feature">
+                            <div class="giga-feature__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                            </div>
+                            <div class="giga-feature__title">Speed</div>
+                            <div class="giga-feature__desc">
+                                Sub-100ms detection vs minutes to hours for competitors
+                            </div>
+                        </div>
+                        <div class="giga-feature">
+                            <div class="giga-feature__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="giga-feature__title">Coverage</div>
+                            <div class="giga-feature__desc">
+                                Linux, IoT, RTOS, satellites, AI agents - full stack
+                            </div>
+                        </div>
+                        <div class="giga-feature">
+                            <div class="giga-feature__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="giga-feature__title">Autonomy</div>
+                            <div class="giga-feature__desc">
+                                Fully autonomous response vs semi-automated competitors
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Half: Market Sizing Box -->
+                <div class="giga-box">
+                    <div class="giga-box__header">
+                        <div class="giga-box__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <span class="giga-box__title">Market Sizing</span>
+                    </div>
+
+                    <div class="market-sizing">
+                        <div class="market-card">
+                            <div class="market-value">$93.75B</div>
+                            <div class="market-label">TAM</div>
+                            <div class="market-desc">
+                                Global AI cybersecurity by 2030 — 24.4% CAGR
+                            </div>
+                        </div>
+                        <div class="market-card">
+                            <div class="market-value">$12B</div>
+                            <div class="market-label">SAM</div>
+                            <div class="market-desc">
+                                IoT, OT, edge, RTOS, satellites, and mixed-OS critical systems
+                            </div>
+                        </div>
+                        <div class="market-card">
+                            <div class="market-value">$350M</div>
+                            <div class="market-label">SOM</div>
+                            <div class="market-desc">
+                                Defense, aerospace, and critical infrastructure in Europe and Turkey
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="giga-box__header" style="margin-top: 40px;">
+                        <div class="giga-box__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 11l-6 6v3h9l3-3"></path>
+                                <path d="M22 12l-4-4-6 6-3-3-6 6"></path>
+                            </svg>
+                        </div>
+                        <span class="giga-box__title">We win on every dimension</span>
+                    </div>
+
+                    <p style="font-size: 16px; color: rgba(255, 255, 255, 0.65); margin-bottom: 24px;">
+                        AutoSecOps vs CrowdStrike, SentinelOne, Darktrace and legacy SIEM<br />
+                        Faster, cheaper, broader, more autonomous.
+                    </p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th style="background: rgba(16, 185, 129, 0.1); color: #10b981;">AutoSecOps</th>
+                                <th>CrowdStrike</th>
+                                <th>SentinelOne</th>
+                                <th>Darktrace / SIEM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Detection speed</strong></td>
+                                <td class="autosecops-col highlight-orange">Sub-100ms</td>
+                                <td>Minutes to hours</td>
+                                <td>Minutes to hours</td>
+                                <td>Minutes to hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Response</strong></td>
+                                <td class="autosecops-col check">✓ Fully autonomous</td>
+                                <td class="cross">✗ Semi-automated</td>
+                                <td class="cross">✗ Semi-automated</td>
+                                <td class="cross">✗ Manual</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coverage</strong></td>
+                                <td class="autosecops-col highlight-orange">✓ Linux, IoT, RTOS, satellites, AI agents</td>
+                                <td class="cross">✗ IT endpoints only</td>
+                                <td class="cross">✗ IT endpoints only</td>
+                                <td>~ Partial coverage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Price / device / mo</strong></td>
+                                <td class="autosecops-col highlight-orange">$8 lowest in class</td>
+                                <td>$15-25+ per device</td>
+                                <td>$15-25+ per device</td>
+                                <td>$20+ per device</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="business-model">
+                        <div class="business-model__title">Business model</div>
+                        <div class="business-model__highlight">$8/device. 80%+ gross margins.</div>
+                        <div class="business-model__desc">
+                            Full autonomous stack<br />
+                            <strong>Competitors cost $50+ total per device</strong> vs our $8-12 all-inclusive
+                        </div>
+                        <div class="business-model__highlight">Path to $1B ARR: 20,000 enterprise customers</div>
+                        
+                        <!-- Cost Comparison -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px;">
+                            <div style="text-align: center; padding: 24px; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 12px;">
+                                <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Combined Competitor Stack</div>
+                                <div style="font-family: 'Outfit', sans-serif; font-size: 42px; font-weight: 600; color: #ef4444; letter-spacing: -0.03em;">$50+</div>
+                                <div style="font-size: 16px; color: rgba(255,255,255,0.4); margin-top: 4px;">/device/month TOTAL</div>
+                                <div style="font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 12px;">Tanium + CrowdStrike + Okta + Vanta + Jamf</div>
+                            </div>
+
+                            <div style="text-align: center; padding: 24px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px;">
+                                <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Singularity AutoSecOps</div>
+                                <div style="font-family: 'Outfit', sans-serif; font-size: 42px; font-weight: 600; color: #10b981; letter-spacing: -0.03em;">$8-12</div>
+                                <div style="font-size: 16px; color: rgba(255,255,255,0.4); margin-top: 4px;">/device/month — everything included</div>
+                                <div style="margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #10b981; background: rgba(16,185,129,0.2); padding: 8px 16px; border-radius: 8px;">
+                                    <strong>↓ SAVE 46–65% INSTANTLY</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

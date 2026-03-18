@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Gender Equity — Singularity Security Platform</title>
+  <meta content="Singularity's commitment to gender equity in cybersecurity. Building an inclusive workplace and diverse team to drive innovation in security technology." name="description" />
+  <meta name="keywords" content="gender equity, diversity inclusion, women in cybersecurity, workplace diversity, inclusive tech, security diversity" />
+  <meta name="author" content="Singularity Research & Development" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Gender Equity — Singularity Security Platform" />
+  <meta property="og:description" content="Singularity's commitment to gender equity in cybersecurity. Building an inclusive workplace and diverse team to drive innovation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://singularityrd.com/images/og-gender-equity.jpg" />
+  <meta property="og:url" content="https://singularityrd.com/gender-equity.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gender Equity — Singularity Security Platform" />
+  <meta name="twitter:description" content="Singularity's commitment to gender equity in cybersecurity." />
+  <meta name="twitter:image" content="https://singularityrd.com/images/og-gender-equity.jpg" />
+  <meta name="theme-color" content="#0d1520" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --off-white: rgba(255, 255, 255, 0.85);
+      --muted: rgba(255, 255, 255, 0.55);
+      --btn-bg: rgba(255, 255, 255, 0.95);
+      --btn-hover: #fff;
+      --green-45: #00ffaa;
+      --purple-45: #a78bfa;
+      --gray-new-8: #141414;
+      --gray-new-10: #1a1a1a;
+      --gray-new-15: #262626;
+      --gray-new-20: #333333;
+      --gray-new-30: #4d4d4d;
+      --gray-new-40: #666666;
+      --gray-new-50: #808080;
+      --gray-new-60: #999999;
+    }
+    html, body {
+      width: 100%; height: 100%; font-family: 'Inter', sans-serif;
+      background: #09090f; color: var(--white); overflow-x: hidden;
+    }
+
+    /* ── Navbar Options ── */
+    nav { position: relative; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav__left { display: flex; align-items: center; gap: 36px; }
+    .nav__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); }
+    .nav__logo-icon { width: 28px; height: 28px; }
+    .nav__logo-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+    .nav__links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav__links li a { display: flex; gap: 4px; padding: 6px 12px; border-radius: 8px; color: var(--off-white); text-decoration: none; font-size: 14px; transition: 0.2s; }
+    .nav__links li a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav__right { display: flex; align-items: center; gap: 12px; }
+    .btn-ghost { background: transparent; border: none; color: var(--off-white); font-size: 14px; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: 0.2s; text-decoration: none; }
+    .btn-ghost:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .btn-primary { background: var(--btn-bg); color: #111; font-size: 14px; font-weight: 500; padding: 8px 20px; border-radius: 20px; text-decoration: none; transition: 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2); }
+    .btn-primary:hover { background: var(--btn-hover); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 8px 28px rgba(0,0,0,0.25); }
+
+    /* ── Dropdowns ── */
+    .nav__item { position: relative; }
+    .nav__dropdown { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px); width: 320px; background: rgba(18,24,36,0.82); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 10px; opacity: 0; pointer-events: none; transition: 0.18s ease; z-index: 200; box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.06); }
+    .nav__item:hover .nav__dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .dropdown__item { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; cursor: pointer; text-decoration: none; transition: 0.15s; }
+    .dropdown__item:hover { background: rgba(255,255,255,0.07); }
+    .dropdown__title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.92); }
+    .dropdown__desc { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.45); line-height: 1.45; }
+
+    /* ── Mobile Hamburger ── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 300; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250; background: rgba(9, 9, 15, 0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu a { display: block; color: var(--white); text-decoration: none; font-size: 20px; font-weight: 500; padding: 14px 24px; border-radius: 12px; transition: background 0.2s; text-align: center; }
+    .mobile-menu a:hover { background: rgba(255, 255, 255, 0.08); }
+    .mobile-menu__cta { margin-top: 20px; background: rgba(255, 255, 255, 0.92) !important; color: #111 !important; font-weight: 600 !important; padding: 14px 32px !important; border-radius: 28px !important; }
+
+    /* ── Hero Section ── */
+    .hero-section { padding: 120px 80px; display: flex; flex-direction: column; align-items: center; position: relative; background: linear-gradient(135deg, #09090f 0%, #1a1a2e 100%); }
+    .hero-inner { width: 100%; max-width: 1200px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(167, 139, 250, 0.1); border: 1px solid rgba(167, 139, 250, 0.3); padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple-45); margin-bottom: 32px; }
+    
+    .hero-title { font-family: 'Outfit', sans-serif; font-size: clamp(48px, 6vw, 72px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .hero-title em { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; color: var(--purple-45); }
+    
+    .hero-subtitle { font-size: clamp(18px, 2vw, 22px); font-weight: 300; color: var(--muted); max-width: 800px; margin: 0 auto 48px; line-height: 1.6; }
+
+    /* ── Stats Section ── */
+    .stats-section { padding: 80px 80px; background: #05080f; }
+    .stats-inner { max-width: 1200px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+    .stat-card { text-align: center; }
+    .stat-number { font-family: 'Outfit', sans-serif; font-size: clamp(32px, 4vw, 48px); font-weight: 600; color: var(--purple-45); margin-bottom: 8px; }
+    .stat-label { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── Content Sections ── */
+    .content-section { padding: 80px 80px; }
+    .content-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 4vw, 48px); font-weight: 500; margin-bottom: 16px; }
+    .section-subtitle { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto; }
+
+    .initiatives-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .initiative-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; transition: all 0.3s ease; }
+    .initiative-card:hover { transform: translateY(-4px); border-color: rgba(167,139,250,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .initiative-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-45), #8b5cf6); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
+    .initiative-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+    .initiative-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── Footer ── */
+    .site-footer { padding-top: 80px; padding-bottom: 120px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 120px; position: relative; }
+    .site-footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: 0.2s; }
+    .site-footer a:hover { color: #fff; }
+
+    @media (max-width: 1200px) {
+      .hero-section { padding: 100px 60px; }
+      .content-section { padding: 60px 40px; }
+      .stats-section { padding: 60px 40px; }
+    }
+    
+    @media (max-width: 1024px) {
+      .hero-section { padding: 80px 40px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+      .initiatives-grid { grid-template-columns: repeat(2, 1fr); }
+      nav { padding: 0 30px; }
+    }
+    
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__right > div:not(.hamburger) { display: none; }
+      .nav__right > a:not(.btn-primary) { display: none; }
+      .hamburger { display: block; }
+      .hero-section { padding: 60px 20px; }
+      .content-section { padding: 40px 20px; }
+      .stats-section { padding: 40px 20px; }
+      nav { padding: 0 20px; }
+      .hero-title { font-size: clamp(36px, 5vw, 56px); }
+      .hero-subtitle { font-size: clamp(14px, 1.8vw, 18px); }
+      .stats-grid { grid-template-columns: 1fr; gap: 24px; }
+      .initiatives-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-section { padding: 40px 16px; }
+      .content-section { padding: 32px 16px; }
+      .stats-section { padding: 32px 16px; }
+      .initiative-card { padding: 24px; }
+    }
+  </style>
+  
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Singularity Research & Development",
+    "url": "https://singularityrd.com"
+  }
+  </script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo" aria-label="Singularity Home">
+          <span class="nav__logo-icon"><svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75"/><circle cx="14" cy="14" r="2.5" fill="white"/></svg></span>
+          <span class="nav__logo-text">Singularity</span>
+        </a>
+        <!-- Nav links -->
+        <ul class="nav__links">
+          <!-- Products dropdown -->
+          <li class="nav__item" id="navProducts">
+            <a href="#" id="navProductsBtn">Products <span class="chevron">▾</span></a>
+            <div class="nav__dropdown" id="navProductsDropdown">
+              <!-- Identity & Access -->
+              <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Identity & Access</div>
+                <a class="dropdown__item" href="products/access-graph.html">
+                  <span class="dropdown__title">Access Graph (ReBAC)</span>
+                  <span class="dropdown__desc">Zero-trust identity, relationship-based authorization</span>
+                </a>
+                <a class="dropdown__item" href="products/identity.html">
+                  <span class="dropdown__title">Singularity Identity (IAM)</span>
+                  <span class="dropdown__desc">Zero-trust identity, access, and authentication</span>
+                </a>
+              </div>
+              
+              <!-- Application & Code Security -->
+              <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Application & Code Security</div>
+                <a class="dropdown__item" href="products/neuralwaf.html">
+                  <span class="dropdown__title">NeuralWAF</span>
+                  <span class="dropdown__desc">ML-first web application firewall</span>
+                </a>
+                <a class="dropdown__item" href="products/agent-runtime.html">
+                  <span class="dropdown__title">Agent Runtime</span>
+                  <span class="dropdown__desc">Sandboxed AI execution environment</span>
+                </a>
+                <a class="dropdown__item" href="products/autopatch.html">
+                  <span class="dropdown__title">AutoPatch</span>
+                  <span class="dropdown__desc">AI-generated vulnerability fixes</span>
+                </a>
+                <a class="dropdown__item" href="products/code-provenance.html">
+                  <span class="dropdown__title">Code Provenance</span>
+                  <span class="dropdown__desc">AI vs human code tracking</span>
+                </a>
+              </div>
+              
+              <!-- Infrastructure & Operations -->
+              <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Infrastructure & Operations</div>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Delivery Core</span>
+                  <span class="dropdown__desc">Immutable CI/CD and release orchestration</span>
+                </a>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Pulse</span>
+                  <span class="dropdown__desc">Real-time infrastructure monitoring with ML anomaly detection</span>
+                </a>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">FleetOS</span>
+                  <span class="dropdown__desc">Software-defined control for vehicles, drones, IoT, and edge</span>
+                </a>
+              </div>
+              
+              <!-- Security Intelligence -->
+              <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Security Intelligence</div>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Security Command (vCISO)</span>
+                  <span class="dropdown__desc">Autonomous red teaming and executive security insight</span>
+                </a>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Threat Atlas</span>
+                  <span class="dropdown__desc">Unified global threat intelligence and early warning</span>
+                </a>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Governance</span>
+                  <span class="dropdown__desc">Continuous compliance monitoring with drift detection</span>
+                </a>
+              </div>
+              
+              <!-- AI & Training -->
+              <div style="padding: 12px 16px;">
+                <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">AI & Training</div>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Operator</span>
+                  <span class="dropdown__desc">AI-powered operational support with human handoff</span>
+                </a>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Forge</span>
+                  <span class="dropdown__desc">Simulation-based training for security, AI, and technical mastery</span>
+                </a>
+                <a class="dropdown__item" href="#">
+                  <span class="dropdown__title">Arena (REPS)</span>
+                  <span class="dropdown__desc">Paid coding challenges where top solutions become AI training data</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="papers.html">Research</a></li>
+          <li class="nav__item" id="navCompany">
+            <a href="#" id="navCompanyBtn">Company <span class="chevron">▾</span></a>
+            <div class="nav__dropdown" id="navCompanyDropdown">
+              <a class="dropdown__item" href="#">
+                <span class="dropdown__title">Blog</span>
+              </a>
+              <a class="dropdown__item" href="#">
+                <span class="dropdown__title">About us</span>
+              </a>
+              <a class="dropdown__item" href="gender-equity.html">
+                <span class="dropdown__title">Gender Equity</span>
+                <span class="dropdown__desc">Diversity & inclusion initiatives</span>
+              </a>
+              <a class="dropdown__item" href="#">
+                <span class="dropdown__title">Careers</span>
+              </a>
+              <a class="dropdown__item" href="#">
+                <span class="dropdown__title">Contact</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__right" style="justify-content: flex-end;">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Products</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="papers.html">Research</a>
+    <a href="#">Company</a>
+    <a href="#" class="mobile-menu__cta">Contact Sales</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <div class="hero-badge">🌟 Diversity & Inclusion</div>
+        <h1 id="hero-heading" class="hero-title">Building <em>Equitable</em> Cybersecurity</h1>
+        <p class="hero-subtitle">At Singularity, we're committed to breaking barriers and creating opportunities for women and underrepresented groups in cybersecurity. Our mission is to build a diverse team that reflects the world we protect.</p>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" aria-labelledby="stats-heading">
+      <div class="stats-inner">
+        <h2 id="stats-heading" class="sr-only">Our Diversity Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">42%</div>
+            <div class="stat-label">Women in Leadership</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">38%</div>
+            <div class="stat-label">Women in Technical Roles</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">65%</div>
+            <div class="stat-label">Gender Pay Equity</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">28%</div>
+            <div class="stat-label">Women in Security</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="content-section" aria-labelledby="initiatives-heading">
+      <div class="content-inner">
+        <div class="section-header">
+          <h2 id="initiatives-heading" class="section-title">Our <em>Initiatives</em></h2>
+          <p class="section-subtitle">Comprehensive programs designed to foster inclusion and advance gender equity in cybersecurity.</p>
+        </div>
+        <div class="initiatives-grid" role="list">
+          <article class="initiative-card" role="listitem">
+            <div class="initiative-icon">🎓</div>
+            <h3 class="initiative-title">Scholarship Program</h3>
+            <p class="initiative-desc">Annual scholarships for women pursuing cybersecurity degrees, including mentorship and internship opportunities at Singularity.</p>
+          </article>
+          <article class="initiative-card" role="listitem">
+            <div class="initiative-icon">🤝</div>
+            <h3 class="initiative-title">Mentorship Network</h3>
+            <p class="initiative-desc">Connecting women in cybersecurity with experienced leaders for career guidance, skill development, and networking opportunities.</p>
+          </article>
+          <article class="initiative-card" role="listitem">
+            <div class="initiative-icon">💼</div>
+            <h3 class="initiative-title">Return-to-Work Program</h3>
+            <p class="initiative-desc">Supporting women re-entering the workforce after career breaks with training, flexible work arrangements, and skill refreshers.</p>
+          </article>
+          <article class="initiative-card" role="listitem">
+            <div class="initiative-icon">🚀</div>
+            <h3 class="initiative-title">Leadership Development</h3>
+            <p class="initiative-desc">Specialized training programs to prepare women for leadership roles in cybersecurity and technology management.</p>
+          </article>
+          <article class="initiative-card" role="listitem">
+            <div class="initiative-icon">🌍</div>
+            <h3 class="initiative-title">Community Outreach</h3>
+            <p class="initiative-desc">Partnerships with schools and organizations to inspire young women to pursue careers in cybersecurity and technology.</p>
+          </article>
+          <article class="initiative-card" role="listitem">
+            <div class="initiative-icon">⚖️</div>
+            <h3 class="initiative-title">Equal Opportunity</h3>
+            <p class="initiative-desc">Ensuring fair hiring practices, unbiased promotion processes, and equal pay for equal work across all levels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 500px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06);">
+    
+    <!-- Graphic Background -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; background: url('footer.png') top center/cover no-repeat; opacity: 0.35; z-index: 0; pointer-events: none;" aria-hidden="true"></div>
+
+    <div class="footer-inner" style="position: relative; z-index: 10; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 80px;">
+      
+      <!-- Top row: Brand & Links -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px;">
+        
+        <!-- Brand Column -->
+        <div>
+          <a href="index.html" class="nav__logo" style="margin-bottom: 24px; display: inline-flex;">
+            <span class="nav__logo-icon" style="width: 24px; height: 24px;">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5" />
+                <circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75" />
+                <circle cx="14" cy="14" r="2.5" fill="white" />
+              </svg>
+            </span>
+            <span class="nav__logo-text" style="font-size: 16px;">Singularity</span>
+          </a>
+          
+          <p style="font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 24px; max-width: 250px;">
+            Autonomous security for the age of autonomous attacks. Built by security researchers.
+          </p>
+          
+          <a href="mailto:info@singularityrd.com" style="display: block; color: var(--white); text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 8px;">info@singularityrd.com</a>
+          
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #10b981;">
+            <span style="display: inline-block; width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+            All systems operational
+          </div>
+        </div>
+        
+        <!-- Links: Company -->
+        <div>
+          <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="about.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">About</a></li>
+            <li><a href="blog.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Blog</a></li>
+            <li><a href="careers.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Careers</a></li>
+            <li><a href="press.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Press Kit</a></li>
+            <li><a href="contact.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Links: Resources -->
+        <div>
+          <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="papers.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Research Papers</a></li>
+            <li><a href="docs.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Documentation</a></li>
+            <li><a href="api.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">API Reference</a></li>
+            <li><a href="security.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Security</a></li>
+            <li><a href="status.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">System Status</a></li>
+          </ul>
+        </div>
+        
+        <!-- Links: Legal -->
+        <div>
+          <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Legal</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="privacy.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Terms of Service</a></li>
+            <li><a href="cookies.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Cookie Policy</a></li>
+            <li><a href="gdpr.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">GDPR Compliance</a></li>
+            <li><a href="sla.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Service Level Agreement</a></li>
+          </ul>
+        </div>
+        
+        <!-- Links: Diversity -->
+        <div>
+          <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Diversity</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li><a href="gender-equity.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Gender Equity</a></li>
+            <li><a href="inclusion.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Inclusion Initiatives</a></li>
+            <li><a href="accessibility.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Accessibility</a></li>
+            <li><a href="cultural.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Cultural Diversity</a></li>
+            <li><a href="community.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Community Impact</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div> <!-- End footer-inner -->
+      
+      <!-- Absolute Bottom row: Copyright -->
+      <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1200px; padding: 0 40px; z-index: 10;">
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.4);">
+          <span>Copyright &copy; 2025 Singularity Research &amp; Development. All rights reserved.</span>
+          <div style="display: flex; gap: 20px;">
+            <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+            <a href="terms.html" style="color: inherit; text-decoration: none;">Terms of Service</a>
+            <a href="cookies.html" style="color: inherit; text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // ── Navigation Dropdowns ─────────────────────────────────────
+    const navItems = document.querySelectorAll('.nav__item');
+
+    navItems.forEach(item => {
+      const btn = item.querySelector('a');
+      const dropdown = item.querySelector('.nav__dropdown');
+      
+      if (dropdown) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const isOpen = item.classList.contains('open');
+          
+          // Close all dropdowns first
+          navItems.forEach(i => {
+            i.classList.remove('open');
+            const otherBtn = i.querySelector('a');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          });
+          
+          // Toggle current dropdown
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+        
+        // Prevent dropdown from closing when clicking inside
+        dropdown.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav__item')) {
+        navItems.forEach(i => {
+          i.classList.remove('open');
+          const btn = i.querySelector('a');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+    
+    // Close dropdowns on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        navItems.forEach(i => {
+          i.classList.remove('open');
+          const btn = i.querySelector('a');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // ── Mobile Menu ─────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let scrollY = 0;
+    
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('open');
+        
+        if (!isOpen) {
+          // Store scroll position
+          scrollY = window.scrollY;
+          document.body.style.overflow = 'hidden';
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${scrollY}px`;
+          document.body.style.width = '100%';
+        } else {
+          // Restore scroll position
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollY);
+        }
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', !isOpen);
+      });
+      
+      // Close menu when clicking links
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          
+          // Restore body scroll
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollY);
+        });
+      });
+      
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          
+          // Restore body scroll
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollY);
+        }
+      });
+    }
+
+    // ── Initialize on DOM Ready ───────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+

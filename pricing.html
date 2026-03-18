@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Singularity Security Platform</title>
+  <meta name="description" content="Simple, transparent per-device pricing for the complete Singularity platform. Choose the plan that fits your needs." />
+  <meta name="keywords" content="pricing, cybersecurity pricing, AI security cost, device management pricing, AutoSecOps pricing, security platform cost" />
+  <meta name="author" content="Singularity Research & Development" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0d1520" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://singularityrd.com/pricing.html" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://singularityrd.com/pricing.html" />
+  <meta property="og:title" content="Pricing — Singularity Security Platform" />
+  <meta property="og:description" content="Simple, transparent per-device pricing for the complete Singularity platform. Choose the plan that fits your needs." />
+  <meta property="og:image" content="https://singularityrd.com/images/og-pricing.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Singularity Security Platform Pricing" />
+  <meta property="og:site_name" content="Singularity" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@singularityrd" />
+  <meta name="twitter:creator" content="@singularityrd" />
+  <meta name="twitter:url" content="https://singularityrd.com/pricing.html" />
+  <meta name="twitter:title" content="Pricing — Singularity Security Platform" />
+  <meta name="twitter:description" content="Simple, transparent per-device pricing for the complete Singularity platform." />
+  <meta name="twitter:image" content="https://singularityrd.com/images/og-pricing.jpg" />
+  <meta name="twitter:image:alt" content="Singularity Security Platform Pricing" />
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Structured Data - OfferCatalog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Singularity Security Platform Pricing",
+    "description": "Simple, transparent per-device pricing for the complete Singularity platform.",
+    "url": "https://singularityrd.com/pricing.html",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "description": "Essential security for small teams",
+        "price": "0",
+        "priceCurrency": "USD",
+        "billingPeriod": "P1M",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "0",
+          "priceCurrency": "USD",
+          "unitText": "per month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Growth",
+        "description": "Advanced security for growing businesses",
+        "price": "29",
+        "priceCurrency": "USD",
+        "billingPeriod": "P1M",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "29",
+          "priceCurrency": "USD",
+          "unitText": "per device per month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise",
+        "description": "Custom security for large organizations",
+        "price": "0",
+        "priceCurrency": "USD",
+        "billingPeriod": "P1M",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "0",
+          "priceCurrency": "USD",
+          "unitText": "contact for pricing"
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --off-white: rgba(255, 255, 255, 0.85);
+      --muted: rgba(255, 255, 255, 0.55);
+      --btn-bg: rgba(255, 255, 255, 0.95);
+      --btn-hover: #fff;
+    }
+    html, body {
+      width: 100%; height: 100%; font-family: 'Inter', sans-serif;
+      background: #09090f; color: var(--white); overflow-x: hidden;
+    }
+    /* ── Navbar ── */
+    nav { position: relative; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav__left { display: flex; align-items: center; gap: 36px; }
+    .nav__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); }
+    .nav__logo-icon { width: 28px; height: 28px; }
+    .nav__logo-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+    .nav__links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav__links li a { display: flex; gap: 4px; padding: 6px 12px; border-radius: 8px; color: var(--off-white); text-decoration: none; font-size: 14px; transition: 0.2s; }
+    .nav__links li a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav__right { display: flex; align-items: center; gap: 12px; }
+    .btn-ghost { background: transparent; border: none; color: var(--off-white); font-size: 14px; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: 0.2s; text-decoration: none; }
+    .btn-ghost:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .btn-primary { background: var(--btn-bg); color: #111; font-size: 14px; font-weight: 500; padding: 8px 20px; border-radius: 20px; text-decoration: none; transition: 0.2s; }
+    .btn-primary:hover { background: var(--btn-hover); transform: translateY(-1px); }
+    
+    /* ── Dropdowns ── */
+    .nav__item { position: relative; }
+    .nav__dropdown { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px); width: 320px; background: rgba(18,24,36,0.82); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 10px; opacity: 0; pointer-events: none; transition: 0.18s ease; z-index: 200; }
+    .nav__item:hover .nav__dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .dropdown__item { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 10px; cursor: pointer; text-decoration: none; transition: 0.15s; }
+    .dropdown__item:hover { background: rgba(255,255,255,0.07); }
+    .dropdown__title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.92); }
+    .dropdown__desc { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.45); line-height: 1.45; }
+
+    /* ── Giga Section & Typography ── */
+    .giga-section { padding: 100px 80px; display: flex; flex-direction: column; align-items: center; position: relative; }
+    .giga-inner { width: 100%; max-width: 1200px; display: flex; flex-direction: column; }
+    .giga-header__label { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--off-white); margin-bottom: 24px; }
+    .giga-header__label-dot { width: 8px; height: 8px; border-radius: 50%; box-shadow: 0 0 12px currentColor; }
+    .giga-headline { text-align: center; font-family: 'Outfit', sans-serif; font-size: clamp(48px, 6vw, 84px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .giga-headline em { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; color: #3b82f6; } /* highlight color */
+    .giga-sub { text-align: center; font-size: clamp(16px, 2vw, 20px); font-weight: 300; color: var(--muted); max-width: 700px; margin: 0 auto 80px; line-height: 1.6; }
+    
+    .giga-box { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.04); margin-bottom: 60px; }
+
+    /* ── Pricing Cards (3 Column) ── */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+    .pricing-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px 32px; transition: all 0.4s ease; position: relative; }
+    .pricing-card:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-3px); }
+    .pricing-card.growth { background: rgba(59,130,246,0.04); border-color: rgba(59,130,246,0.25); box-shadow: 0 0 40px rgba(59,130,246,0.08), inset 0 1px 0 rgba(59,130,246,0.15); }
+    .pricing-card.growth:hover { border-color: rgba(59,130,246,0.4); box-shadow: 0 0 60px rgba(59,130,246,0.12), inset 0 1px 0 rgba(59,130,246,0.2); }
+    .pricing-card.enterprise { border-color: rgba(139,92,246,0.12); }
+    .pricing-card.enterprise:hover { border-color: rgba(139,92,246,0.3); }
+    
+    .card-tier { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+    .growth .card-tier { color: #3b82f6; }
+    .card-title { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+    .card-price { font-family: 'Outfit', sans-serif; font-size: 52px; font-weight: 500; letter-spacing: -0.03em; margin-bottom: 8px; display: flex; align-items: baseline; gap: 4px; }
+    .card-price span { font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.45); font-family: 'Inter', sans-serif; }
+    .card-subtitle { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 36px; line-height: 1.6; }
+    
+    .btn-card { display: block; text-align: center; padding: 14px 24px; border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; transition: 0.3s; margin-bottom: 32px; }
+    .btn-card.starter { border: 1px solid rgba(255,255,255,0.12); color: #fff; }
+    .btn-card.starter:hover { background: rgba(255,255,255,0.06); }
+    .btn-card.growth { background: linear-gradient(135deg, #3b82f6, #6366f1); color: #fff; box-shadow: 0 4px 15px rgba(59,130,246,0.3); border: none; }
+    .btn-card.growth:hover { box-shadow: 0 6px 25px rgba(59,130,246,0.4); transform: translateY(-1px); }
+    .btn-card.enterprise { background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.25); color: #fff; }
+    .btn-card.enterprise:hover { background: rgba(139,92,246,0.15); }
+    
+    .feature-list { display: flex; flex-direction: column; gap: 16px; }
+    .feature-list-title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); margin: 16px 0 4px 0; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 24px; }
+    .fn-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.55; }
+    .fn-item i { flex-shrink: 0; margin-top: 3px; }
+    .fn-item.muted { color: rgba(255,255,255,0.35); }
+    .fn-tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 5px; margin-left: auto; white-space: nowrap; }
+    .fn-tag.essential { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+    .fn-tag.important { background: rgba(59,130,246,0.2); color: #60a5fa; }
+    .fn-tag.enterprise { background: rgba(139,92,246,0.2); color: #c084fc; }
+
+    /* ── Discount Banners ── */
+    .discount-banner { display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 24px; font-size: 14px; color: rgba(255,255,255,0.6); gap: 12px; }
+    .discount-banner span strong { color: #fff; font-weight: 600; }
+    .discount-banner .highlight-green { color: #10b981; }
+    .discount-banner .highlight-purple { color: #a78bfa; }
+
+    /* ── Massive Feature Comparison Table ── */
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 40px; }
+    .compare-table th, .compare-table td { padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); text-align: left; vertical-align: top; }
+    .compare-table th { font-weight: 600; color: rgba(255,255,255,0.5); font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 2px solid rgba(255,255,255,0.12); }
+    .compare-table td:first-child { font-weight: 500; color: #fff; width: 35%; font-size: 14px; line-height: 1.5; }
+    .compare-table td.subtext { color: rgba(255,255,255,0.35); font-size: 12px; font-weight: 400; margin-top: 4px; display: block; line-height: 1.4; }
+    .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .td-starter { width: 20%; color: rgba(255,255,255,0.7); font-size: 14px; }
+    .td-growth { width: 20%; color: #60a5fa; font-weight: 500; background: rgba(59,130,246,0.02); font-size: 14px; }
+    .td-enterprise { width: 25%; color: #c084fc; font-size: 14px; }
+    .section-row td { padding-top: 44px; padding-bottom: 18px; border-bottom: 2px solid rgba(255,255,255,0.15) !important; font-size: 17px; font-weight: 600 !important; font-family: 'Outfit', sans-serif; letter-spacing: 0.02em; color: #fff !important; }
+
+    /* ── Included in Every Plan Grid ── */
+    .included-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+    .included-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; transition: all 0.3s ease; }
+    .included-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+    .included-card h4 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 500; margin-bottom: 12px; color: #fff; }
+    .included-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 24px; }
+    .included-card a { font-size: 13px; font-weight: 500; color: #3b82f6; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .included-card a:hover { text-decoration: underline; }
+
+    /* ── FAQ ── */
+    .faq-grid { display: grid; gap: 36px; max-width: 900px; margin: 40px auto 0; }
+    .faq-item h4 { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 500; color: #fff; margin-bottom: 14px; line-height: 1.4; }
+    .faq-item p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+
+    /* ── Competitor Comparison ── */
+    .competitor-section { padding-top: 100px; }
+    .competitor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+    .competitor-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .competitor-card:hover { border-color: rgba(255,255,255,0.12); }
+    .competitor-card__name { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.75); margin-bottom: 6px; }
+    .competitor-card__price { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 600; color: #ef4444; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .competitor-card__desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+    .competitor-card__tag { position: absolute; top: 16px; right: 16px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 6px; background: rgba(239,68,68,0.1); color: #ef4444; }
+    .savings-card { background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15); border-radius: 16px; padding: 40px; text-align: center; margin-top: 20px; }
+    .savings-card__value { font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 600; color: #10b981; margin-bottom: 8px; }
+    .savings-card__label { font-size: 15px; color: rgba(255,255,255,0.5); }
+    @media (max-width: 768px) { .competitor-grid { grid-template-columns: 1fr; } }
+
+    /* ── Footer ── */
+    .site-footer { padding-top: 80px; padding-bottom: 120px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 120px; position: relative; }
+    .site-footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: 0.2s; }
+    .site-footer a:hover { color: #fff; }
+
+    @media (max-width: 1024px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto 40px; }
+      .included-grid { grid-template-columns: 1fr; }
+      .compare-table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+    
+    /* ─── MOBILE HAMBURGER MENU ───────────────────────────────── */
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 300; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250; background: rgba(9, 9, 15, 0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu a { display: block; color: var(--white); text-decoration: none; font-size: 20px; font-weight: 500; padding: 14px 24px; border-radius: 12px; transition: background 0.2s; text-align: center; }
+    .mobile-menu a:hover { background: rgba(255, 255, 255, 0.08); }
+    .mobile-menu__cta { margin-top: 20px; background: rgba(255, 255, 255, 0.92) !important; color: #111 !important; font-weight: 600 !important; padding: 14px 32px !important; border-radius: 28px !important; }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__right > a { display: none; }
+      .nav__right > div { display: none; }
+      .hamburger { display: block; }
+    }
+  </style>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav__left">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-icon"><svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75"/><circle cx="14" cy="14" r="2.5" fill="white"/></svg></span>
+        <span class="nav__logo-text">Singularity</span>
+      </a>
+      <ul class="nav__links">
+        <!-- Products dropdown -->
+        <li class="nav__item" id="navProducts">
+          <a href="javascript:void(0)" id="navProductsBtn">Products <span class="chevron">▾</span></a>
+          <div class="nav__dropdown" id="navProductsDropdown">
+            <!-- Identity & Access -->
+            <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Identity & Access</div>
+              <a class="dropdown__item" href="products/access-graph.html">
+                <span class="dropdown__title">Access Graph (ReBAC)</span>
+                <span class="dropdown__desc">Zero-trust identity, relationship-based authorization</span>
+              </a>
+              <a class="dropdown__item" href="products/identity.html">
+                <span class="dropdown__title">Singularity Identity (IAM)</span>
+                <span class="dropdown__desc">Zero-trust identity, access, and authentication</span>
+              </a>
+            </div>
+            
+            <!-- Application & Code Security -->
+            <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Application & Code Security</div>
+              <a class="dropdown__item" href="products/neuralwaf.html">
+                <span class="dropdown__title">NeuralWAF</span>
+                <span class="dropdown__desc">ML-first web application firewall</span>
+              </a>
+              <a class="dropdown__item" href="products/agent-runtime.html">
+                <span class="dropdown__title">Agent Runtime</span>
+                <span class="dropdown__desc">Sandboxed AI execution environment</span>
+              </a>
+              <a class="dropdown__item" href="products/autopatch.html">
+                <span class="dropdown__title">AutoPatch</span>
+                <span class="dropdown__desc">AI-generated vulnerability fixes</span>
+              </a>
+              <a class="dropdown__item" href="products/code-provenance.html">
+                <span class="dropdown__title">Code Provenance</span>
+                <span class="dropdown__desc">AI vs human code tracking</span>
+              </a>
+            </div>
+            
+            <!-- Infrastructure & Operations -->
+            <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Infrastructure & Operations</div>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Delivery Core</span>
+                <span class="dropdown__desc">Immutable CI/CD and release orchestration</span>
+              </a>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Pulse</span>
+                <span class="dropdown__desc">Real-time infrastructure monitoring with ML anomaly detection</span>
+              </a>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">FleetOS</span>
+                <span class="dropdown__desc">Software-defined control for vehicles, drones, IoT, and edge</span>
+              </a>
+            </div>
+            
+            <!-- Security Intelligence -->
+            <div style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Security Intelligence</div>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Security Command (vCISO)</span>
+                <span class="dropdown__desc">Autonomous red teaming and executive security insight</span>
+              </a>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Threat Atlas</span>
+                <span class="dropdown__desc">Unified global threat intelligence and early warning</span>
+              </a>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Governance</span>
+                <span class="dropdown__desc">Continuous compliance monitoring with drift detection</span>
+              </a>
+            </div>
+            
+            <!-- AI & Training -->
+            <div style="padding: 12px 16px;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">AI & Training</div>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Operator</span>
+                <span class="dropdown__desc">AI-powered operational support with human handoff</span>
+              </a>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Forge</span>
+                <span class="dropdown__desc">Simulation-based training for security, AI, and technical mastery</span>
+              </a>
+              <a class="dropdown__item" href="javascript:void(0)">
+                <span class="dropdown__title">Arena (REPS)</span>
+                <span class="dropdown__desc">Paid coding challenges where top solutions become AI training data</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="pricing.html" style="color: #fff; background: rgba(255,255,255,0.08);">Pricing</a></li>
+        <li><a href="papers.html">Research</a></li>
+        <li class="nav__item" id="navCompany">
+          <a href="javascript:void(0)" id="navCompanyBtn">Company <span class="chevron">▾</span></a>
+          <div class="nav__dropdown" id="navCompanyDropdown">
+            <a class="dropdown__item" href="javascript:void(0)">
+              <span class="dropdown__title">Blog</span>
+            </a>
+            <a class="dropdown__item" href="javascript:void(0)">
+              <span class="dropdown__title">About us</span>
+            </a>
+            <a class="dropdown__item" href="gender-equity.html">
+              <span class="dropdown__title">Gender Equity</span>
+              <span class="dropdown__desc">Diversity & inclusion initiatives</span>
+            </a>
+            <a class="dropdown__item" href="javascript:void(0)">
+              <span class="dropdown__title">Careers</span>
+            </a>
+            <a class="dropdown__item" href="javascript:void(0)">
+              <span class="dropdown__title">Contact</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="nav__right" style="justify-content: flex-end;">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <main id="main-content">
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="javascript:void(0)">Products</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="papers.html">Research</a>
+    <a href="javascript:void(0)">Company</a>
+    <a href="javascript:void(0)" class="mobile-menu__cta">Contact Sales</a>
+  </div>
+
+  <!-- Main Pricing Hero -->
+  <div style="position: relative; background: #09090f; z-index: 10; min-height: 100vh;">
+    <!-- Spanning ASCII Background -->
+    <div style="position: absolute; inset: 0; background: url('ascii-2026-03-16-179v8q.png') center center / cover no-repeat fixed; opacity: 0.15; pointer-events: none; mix-blend-mode: screen;"></div>
+    
+  <section class="giga-section" style="background: transparent;">
+    <div class="giga-inner">
+      <div class="giga-header__label">
+        <span class="giga-header__label-dot" style="color: #3b82f6;"></span>
+        Pricing
+      </div>
+      <h1 class="giga-headline">Stop Overpaying<br />for <em>Security</em></h1>
+      <p class="giga-sub">Replace Jamf + CrowdStrike + Okta + Vanta with one platform. Save 46-65% instantly.</p>
+      
+      <!-- PRICING CARDS TIER -->
+      <div class="pricing-grid">
+        
+        <!-- Starter -->
+        <div class="pricing-card">
+          <div class="card-tier">Starter</div>
+          <h3 class="card-title">The Watchman</h3>
+          <div class="card-price">$8 <span>/month</span></div>
+          <p class="card-subtitle">Essential protection for small teams. All the core features you need to secure your devices.</p>
+          <a href="javascript:void(0)" class="btn-card starter">Get started</a>
+          <div class="feature-list">
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>Cross-Platform MDM</span> <span class="fn-tag essential">Essential</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>Zero-Touch Deployment</span> <span class="fn-tag important">Important</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>BYOD Enrollment</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>AutoSecOps Core</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>Malware Detection</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>File Integrity Monitoring</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>SOC 2 Compliance</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>REST API & Webhooks</span></div>
+            <div class="fn-item"><i style="color:#10b981;">✓</i> <span>Email Support</span></div>
+          </div>
+        </div>
+
+        <!-- Growth -->
+        <div class="pricing-card growth">
+          <div style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, #3b82f6, #8b5cf6); padding: 4px 16px; border-radius: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #fff;">Most Popular</div>
+          <div class="card-tier">Growth</div>
+          <h3 class="card-title">The Shield Bearer</h3>
+          <div class="card-price">$12 <span>/month</span></div>
+          <p class="card-subtitle">Complete security for growing organizations. Everything in Starter plus advanced features.</p>
+          <a href="javascript:void(0)" class="btn-card growth">Get started</a>
+          <div class="feature-list">
+            <div class="fn-item" style="color:#fff; font-weight:500;"><i style="color:#3b82f6;">✓</i> Everything in Starter</div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Identity Management (SSO/SCIM)</span> <span class="fn-tag important">Important</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Application Deployment</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>OS Updates & Patch Management</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>AutoSecOps Advanced</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Vulnerability Scanning</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Dark Web Monitoring</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>10 Threat Intelligence Feeds</span></div>
+            <div class="feature-list-title">Compliance</div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>SOC 2, HIPAA, GDPR, ISO</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Virtual CISO (Basic)</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Annual Penetration Testing</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Audit Logging & Reporting</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>GitOps & CI/CD Integration</span></div>
+            <div class="fn-item"><i style="color:#3b82f6;">✓</i> <span>Slack Support (8×5)</span></div>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card enterprise">
+          <div class="card-tier">Scale</div>
+          <h3 class="card-title">The Iron Fortress</h3>
+          <div class="card-price" style="font-size: 36px; padding: 4px 0 6px 0;">Custom pricing</div>
+          <p class="card-subtitle">Enterprise-grade security with dedicated support. For organizations with complex requirements.</p>
+          <a href="javascript:void(0)" class="btn-card enterprise">Contact us</a>
+          <div class="feature-list">
+            <div class="fn-item" style="color:#fff; font-weight:500;"><i style="color:#a78bfa;">✓</i> Everything in Growth</div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>AutoSecOps + Custom Rules</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>Predictive Maintenance AI</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>50+ Threat Intelligence Feeds</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>All Compliance Frameworks</span> <span class="fn-tag enterprise">Enterprise</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>Full Virtual CISO</span> <span class="fn-tag enterprise">Enterprise</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>Continuous Penetration Testing</span></div>
+            <div class="feature-list-title">Enterprise Plans</div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>Self-Hosted / Air-Gapped</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>Dedicated Security Engineer</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>24/7 Phone Support (99.99%)</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>Volume Discounts (100+)</span></div>
+            <div class="fn-item"><i style="color:#a78bfa;">✓</i> <span>2-Year Agreement: 25% off</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner Program & Startup Program Banners -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 80px;">
+        <div class="discount-banner" style="margin: 0;">
+          <div>
+            <h4 style="color:#fff; font-size: 16px; margin-bottom: 6px; font-weight: 500;">Partner Program</h4>
+            <p>MSP, MSSP, and technology partners get special pricing. Offer Singularity security to your customers.</p>
+          </div>
+          <a href="javascript:void(0)" style="flex-shrink: 0; padding: 10px 16px; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; text-decoration: none; font-weight: 500;">Become a Partner</a>
+        </div>
+        <div class="discount-banner" style="margin: 0;">
+          <div>
+            <h4 style="color:#fff; font-size: 16px; margin-bottom: 6px; font-weight: 500;">Startup Program</h4>
+            <p>Early-stage startups (Pre-Seed to Series A) get <span class="highlight-green">50% off for 12 months</span>.</p>
+          </div>
+          <a href="javascript:void(0)" style="flex-shrink: 0; padding: 10px 16px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; color: #10b981; text-decoration: none; font-weight: 500;">Apply Now →</a>
+        </div>
+      </div>
+
+      <!-- FEATURE MATRIX SECTION -->
+      <div class="giga-box" style="padding: 60px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #fff; margin-bottom: 12px; text-align: center;">Pricing Model Matrix</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 40px;">Compare Singularity against legacy vendors like Tanium and CrowdStrike.</p>
+        
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature / Component</th>
+              <th class="td-starter">Starter<br/><span style="font-size:16px; color:#fff;">$8/device</span></th>
+              <th class="td-growth">Growth<br/><span style="font-size:16px; color:#fff;">$12/device</span></th>
+              <th class="td-enterprise">Enterprise<br/><span style="font-size:16px; color:#fff;">Custom</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Core Structure -->
+            <tr class="section-row">
+              <td colspan="4">Pricing Model</td>
+            </tr>
+            <tr>
+              <td>Per-Device Billing<span class="subtext">All features included — no add-on modules</span></td>
+              <td class="td-starter">Included</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>Minimum Endpoint Requirement<span class="subtext">Tanium, CrowdStrike require 2,000+ endpoints</span></td>
+              <td class="td-starter">No minimum</td>
+              <td class="td-growth">No minimum</td>
+              <td class="td-enterprise">100+ recommended</td>
+            </tr>
+            <tr>
+              <td>Identity Management (SSO/SCIM)<span class="subtext">Competitors charge Okta separately: $15-20/user</span></td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+
+            <!-- Device Management -->
+            <tr class="section-row">
+              <td colspan="4">Device Management</td>
+            </tr>
+            <tr>
+              <td>Cross-Platform MDM<span class="subtext">Windows, macOS, Linux, iOS, Android</span></td>
+              <td class="td-starter">Included</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>Zero-Touch Deployment<span class="subtext">Tanium charges extra: $2.65/device</span></td>
+              <td class="td-starter">Included</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>BYOD Enrollment & Work Profiles</td>
+              <td class="td-starter">Included</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>Application Deployment & Management<span class="subtext">Tanium charges extra: $7.25/device</span></td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>OS Updates & Patch Management<span class="subtext">Tanium charges extra: $7.25/device</span></td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+
+            <!-- Endpoint Security -->
+            <tr class="section-row">
+              <td colspan="4">Endpoint Security</td>
+            </tr>
+            <tr>
+              <td>AutoSecOps (AI Threat Response)<span class="subtext">Sub-100ms autonomous response</span></td>
+              <td class="td-starter">Core</td>
+              <td class="td-growth">Advanced</td>
+              <td class="td-enterprise">Advanced + Custom Rules</td>
+            </tr>
+            <tr>
+              <td>Malware Detection (YARA/IoCs)</td>
+              <td class="td-starter">Included</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>File Integrity Monitoring<span class="subtext">Tanium charges extra: $7.25/device</span></td>
+              <td class="td-starter">Included</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>Vulnerability Scanning & Scoring<span class="subtext">CISA KEV integration</span></td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>Threat Intelligence Feeds</td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">10 feeds</td>
+              <td class="td-enterprise">50+ feeds</td>
+            </tr>
+            <tr>
+              <td>Predictive Maintenance AI<span class="subtext">Singularity exclusive — no competitor offers this</span></td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">—</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+
+            <!-- Compliance -->
+            <tr class="section-row">
+              <td colspan="4">Compliance & Governance</td>
+            </tr>
+            <tr>
+              <td>Compliance Frameworks<span class="subtext">Competitors charge Vanta separately: $800+/mo</span></td>
+              <td class="td-starter">SOC 2</td>
+              <td class="td-growth">SOC 2, HIPAA, GDPR, ISO</td>
+              <td class="td-enterprise">All + Custom</td>
+            </tr>
+            <tr>
+              <td>Virtual CISO Assistant</td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">Basic</td>
+              <td class="td-enterprise">Full</td>
+            </tr>
+            <tr>
+              <td>Penetration Testing<span class="subtext">Market rate: $4,000-15,000/year</span></td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">Annual (Included)</td>
+              <td class="td-enterprise">Continuous (Included)</td>
+            </tr>
+
+            <!-- Deployment & Support -->
+            <tr class="section-row">
+              <td colspan="4">Deployment, Integrations & Support</td>
+            </tr>
+            <tr>
+              <td>Deployment Model</td>
+              <td class="td-starter">Managed Cloud</td>
+              <td class="td-growth">Managed Cloud</td>
+              <td class="td-enterprise">Self-Hosted / Air-Gapped</td>
+            </tr>
+            <tr>
+              <td>REST API & Webhooks</td>
+              <td class="td-starter">Included</td>
+              <td class="td-growth">Included</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>Support SLA</td>
+              <td class="td-starter">Email</td>
+              <td class="td-growth">Slack (8×5)</td>
+              <td class="td-enterprise">24/7 Phone (99.99%)</td>
+            </tr>
+            <tr>
+              <td>Dedicated Security Engineer</td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">—</td>
+              <td class="td-enterprise">Included</td>
+            </tr>
+            <tr>
+              <td>Annual Billing Discount</td>
+              <td class="td-starter">17% off</td>
+              <td class="td-growth">17% off</td>
+              <td class="td-enterprise">17% off</td>
+            </tr>
+            <tr>
+              <td>2-Year Agreement Discount</td>
+              <td class="td-starter">—</td>
+              <td class="td-growth">—</td>
+              <td class="td-enterprise">25% off</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── WHAT COMPETITORS CHARGE ── -->
+      <div class="competitor-section">
+        <div style="text-align: center; margin-bottom: 12px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 20px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444; box-shadow: 0 0 12px rgba(239,68,68,0.5);"></span>
+            What You're Currently Paying
+          </div>
+          <h2 style="font-family: 'Outfit', sans-serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 500; color: #fff; line-height: 1.3; margin: 0 auto 8px;">
+            Replace your entire stack <span style="color: rgba(255,255,255,0.35);">with one platform.</span>
+          </h2>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.4); margin-bottom: 0;">Here's what competitors charge separately — we include everything.</p>
+        </div>
+
+        <div class="competitor-grid">
+          <!-- Tanium Core -->
+          <div class="competitor-card">
+            <span class="competitor-card__tag">Replaced</span>
+            <div class="competitor-card__name">Tanium Core Platform</div>
+            <div class="competitor-card__price">$24.00<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.3);">/device/mo</span></div>
+            <div class="competitor-card__desc">Device management only. 2,000 endpoint minimum. Patch ($7.25), Deploy ($7.25), Threat Response ($13.50) each sold separately.</div>
+          </div>
+
+          <!-- CrowdStrike -->
+          <div class="competitor-card">
+            <span class="competitor-card__tag">Replaced</span>
+            <div class="competitor-card__name">CrowdStrike Falcon</div>
+            <div class="competitor-card__price">$8.99<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.3);">/device/mo</span></div>
+            <div class="competitor-card__desc">EDR only. 250 endpoint minimum. No MDM, no compliance, no identity management included.</div>
+          </div>
+
+          <!-- Okta -->
+          <div class="competitor-card">
+            <span class="competitor-card__tag">Replaced</span>
+            <div class="competitor-card__name">Okta Workforce Identity</div>
+            <div class="competitor-card__price">$6.00<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.3);">/user/mo</span></div>
+            <div class="competitor-card__desc">Identity only. SSO + MFA as separate add-ons. No device management, no endpoint security.</div>
+          </div>
+
+          <!-- Vanta -->
+          <div class="competitor-card">
+            <span class="competitor-card__tag">Replaced</span>
+            <div class="competitor-card__name">Vanta Compliance</div>
+            <div class="competitor-card__price">$10,000<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.3);">/year</span></div>
+            <div class="competitor-card__desc">SOC 2 compliance only. No security operations, no MDM, no threat response.</div>
+          </div>
+
+          <!-- Jamf -->
+          <div class="competitor-card">
+            <span class="competitor-card__tag">Replaced</span>
+            <div class="competitor-card__name">Jamf Pro</div>
+            <div class="competitor-card__price">$7.17<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.3);">/device/mo</span></div>
+            <div class="competitor-card__desc">Apple MDM only. No Windows/Linux, no EDR, no compliance automation, no identity.</div>
+          </div>
+
+          <!-- Datadog -->
+          <div class="competitor-card">
+            <span class="competitor-card__tag">Replaced</span>
+            <div class="competitor-card__name">Datadog Infrastructure</div>
+            <div class="competitor-card__price">$15.00<span style="font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.3);">/host/mo</span></div>
+            <div class="competitor-card__desc">Monitoring only. Per-GB log charges add up fast. No security, no compliance, no device management.</div>
+          </div>
+        </div>
+
+        <!-- Combined Stack Cost vs Singularity -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+          <div class="competitor-card" style="text-align: center; border-color: rgba(239,68,68,0.15); background: rgba(239,68,68,0.03);">
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Combined Competitor Stack</div>
+            <div style="font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 600; color: #ef4444; letter-spacing: -0.03em;">$50+</div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 4px;">/device/month</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 12px;">Tanium + CrowdStrike + Okta + Vanta + Jamf</div>
+          </div>
+
+          <div class="savings-card">
+            <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Singularity AutoSecOps</div>
+            <div class="savings-card__value">$12</div>
+            <div class="savings-card__label">/device/month — everything included</div>
+            <div style="margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #10b981; background: rgba(16,185,129,0.1); padding: 6px 14px; border-radius: 8px;">
+              ↓ Save 46–65% instantly
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <div style="padding-top: 100px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 40px; text-align: center; margin-bottom: 20px;">Your questions, answered</h2>
+        <div class="faq-grid">
+          
+          <div class="faq-item">
+            <h4>Why do you charge per device instead of per user?</h4>
+            <p>Security runs on endpoints. Every device—laptop, phone, server—is an attack surface that requires protection. By charging per device, we include unlimited users and identity management at no additional cost. This eliminates the need for separate Okta or Azure AD Premium licenses.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>How does Singularity compare to Tanium?</h4>
+            <p>Tanium requires a 2,000 endpoint minimum and charges separately for each module: Core Platform ($24/device), Patch ($7.25/device), Deploy ($7.25/device), Threat Response ($13.50/device), and more. A comparable Tanium stack costs $50+/device/month. Singularity provides the complete stack—MDM, EDR, compliance, identity, and pen testing—for $12/device with no minimum purchase requirement.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What is the minimum purchase requirement?</h4>
+            <p>None. Unlike Tanium (2,000 endpoints), CrowdStrike (250 endpoints), and other enterprise vendors, we have no minimum. Start with 10 devices or 10,000—same straightforward per-device pricing. Volume discounts begin at 100+ devices.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What does "All-in-One" include?</h4>
+            <p>One price, complete coverage: Cross-platform MDM, endpoint detection & response (EDR), patch management, application deployment, file integrity monitoring, vulnerability scanning, compliance automation (SOC 2, HIPAA, GDPR, ISO 27001), identity management (SSO/SCIM), dark web monitoring, and annual penetration testing. No modules. No add-ons. No surprises.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Do you offer startup pricing?</h4>
+            <p>Yes. Early-stage startups (Pre-Seed to Series A, fewer than 100 employees) qualify for 50% off for 12 months. This includes full access to compliance automation to help close enterprise deals faster. Contact sales to apply.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div> <!-- End giga-inner -->
+  </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer" style="position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 500px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06);">
+      
+      <!-- Graphic Background -->
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; background: url('footer.png') top center/cover no-repeat; opacity: 0.35; z-index: 0; pointer-events: none;"></div>
+
+      <div class="footer-inner" style="position: relative; z-index: 10; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 80px;">
+        
+        <!-- Top row: Brand & Links -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;">
+          
+          <!-- Brand Column -->
+          <div>
+            <a href="javascript:void(0)" class="nav__logo" style="margin-bottom: 24px; display: inline-flex;">
+              <span class="nav__logo-icon" style="width: 24px; height: 24px;">
+                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5" />
+                  <circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75" />
+                  <circle cx="14" cy="14" r="2.5" fill="white" />
+                </svg>
+              </span>
+              <span class="nav__logo-text" style="font-size: 16px;">Singularity</span>
+            </a>
+            
+            <p style="font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 24px; max-width: 250px;">
+              Autonomous security for the age of autonomous attacks. Built by security researchers.
+            </p>
+            
+            <a href="mailto:info@singularityrd.com" style="display: block; color: var(--white); text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 8px;">info@singularityrd.com</a>
+            
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #10b981;">
+              <span style="display: inline-block; width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></span>
+              All systems operational
+            </div>
+          </div>
+          
+          <!-- Links: Company -->
+          <div>
+            <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Company</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li><a href="https://singularityrd.com/about" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">About</a></li>
+              <li><a href="https://singularityrd.com/blog" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Blog</a></li>
+              <li><a href="https://singularityrd.com/partners" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Partners</a></li>
+            </ul>
+          </div>
+          
+          <!-- Links: Resources -->
+          <div>
+            <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Resources</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li><a href="https://singularityrd.com/security" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Security</a></li>
+              <li><a href="https://singularityrd.com/contact-sales" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Contact Sales</a></li>
+            </ul>
+          </div>
+          
+          <!-- Links: Social -->
+          <div>
+            <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Social</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li><a href="https://github.com/singularityrd" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">GitHub</a></li>
+              <li><a href="https://x.com/singularityrd" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">x.com</a></li>
+              <li><a href="https://linkedin.com/company/singularityrd" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">LinkedIn</a></li>
+              <li><a href="https://youtube.com/@singularityrd" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">YouTube</a></li>
+            </ul>
+          </div>
+          
+        </div>
+      </div> <!-- End footer-inner -->
+        
+      <!-- Absolute Bottom row: Copyright -->
+      <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1200px; padding: 0 40px; z-index: 10;">
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.4);">
+          <span>Copyright &copy; 2026 Singularity Research &amp; Development. All rights reserved.</span>
+          <div style="display: flex; gap: 20px;">
+            <a href="javascript:void(0)" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+            <a href="javascript:void(0)" style="color: inherit; text-decoration: none;">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // ── Parallax ──────────────────────────────────────────────
+    const bg = document.getElementById('heroBg');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrolled = window.scrollY;
+          const pct = scrolled / window.innerHeight;
+          bg.style.transform = `scale(1.04) translateY(${pct * 30}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // ── Dropdowns: generic handler for all nav items ──────────
+    const navItems = document.querySelectorAll('.nav__item');
+
+    navItems.forEach(item => {
+      const btn = item.querySelector('a');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = item.classList.contains('open');
+        // Close all first
+        navItems.forEach(i => i.classList.remove('open'));
+        // Toggle clicked one
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav__item')) {
+        navItems.forEach(i => i.classList.remove('open'));
+      }
+    });
+    // Canvas Steps Active Toggle (per giga-box)
+    document.querySelectorAll('.giga-box').forEach(function(box) {
+      var steps = box.querySelectorAll('.canvas-step');
+      var panels = box.querySelectorAll('.test-results-panel');
+      
+      steps.forEach(function(step, index) {
+        step.addEventListener('click', function() {
+          // Update steps
+          steps.forEach(function(s) { s.classList.remove('active'); });
+          step.classList.add('active');
+          
+          // Update panels
+          if (panels.length > 0) {
+            panels.forEach(function(p) { p.classList.remove('active'); });
+            // Fallback to first panel if panels count doesn't match exactly
+            var targetPanel = panels[index] || panels[0];
+            if (targetPanel) {
+              targetPanel.classList.add('active');
+            }
+          }
+        });
+      });
+    });
+
+    // Scroll Reveal
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+    // Mobile Hamburger Menu
+    var hamburger = document.getElementById('hamburgerBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  </script>
+
+
+  </body>
+</html>
+

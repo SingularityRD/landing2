@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Level Agreement — Singularity Security Platform</title>
+  <meta name="description" content="Singularity Service Level Agreement - Our commitment to uptime, support, and service quality for enterprise customers." />
+  <meta name="author" content="Singularity Research & Development" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#0d1520" />
+  <link rel="canonical" href="https://singularityrd.com/sla.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white: #ffffff; --off-white: rgba(255,255,255,0.85); --muted: rgba(255,255,255,0.55); --btn-bg: rgba(255,255,255,0.95); --btn-hover: #fff; --green-45: #10b981; --red-45: #ef4444; --yellow-45: #f59e0b; }
+    html, body { width: 100%; height: 100%; font-family: 'Inter', sans-serif; background: #0d1520; color: var(--white); overflow-x: hidden; line-height: 1.6; }
+    nav { position: relative; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav__left { display: flex; align-items: center; gap: 36px; }
+    .nav__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); }
+    .nav__logo-icon { width: 28px; height: 28px; }
+    .nav__logo-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+    .nav__links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav__links li a { display: flex; gap: 4px; padding: 6px 12px; border-radius: 8px; color: var(--off-white); text-decoration: none; font-size: 14px; transition: 0.2s; }
+    .nav__links li a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 300; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250; background: rgba(9,9,15,0.97); backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu a { display: block; color: var(--white); text-decoration: none; font-size: 20px; font-weight: 500; padding: 14px 24px; border-radius: 12px; transition: background 0.2s; text-align: center; }
+    .mobile-menu a:hover { background: rgba(255,255,255,0.08); }
+    .legal-section { padding: 80px 80px; }
+    .legal-inner { max-width: 900px; margin: 0 auto; }
+    .legal-header { margin-bottom: 60px; }
+    .legal-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 4vw, 48px); font-weight: 500; margin-bottom: 16px; }
+    .legal-subtitle { font-size: 18px; color: var(--muted); }
+    .legal-content { font-size: 15px; line-height: 1.8; color: var(--off-white); }
+    .legal-content h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 500; margin-top: 48px; margin-bottom: 24px; color: var(--white); }
+    .legal-content h3 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; color: var(--white); }
+    .legal-content p { margin-bottom: 20px; }
+    .legal-content ul, .legal-content ol { margin-bottom: 20px; padding-left: 24px; }
+    .legal-content li { margin-bottom: 12px; }
+    .legal-content a { color: #3b82f6; text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+    .last-updated { font-size: 14px; color: var(--muted); margin-bottom: 32px; font-style: italic; }
+    .sla-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 40px 0; }
+    .sla-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; text-align: center; }
+    .sla-card h4 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .sla-value { font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 600; margin-bottom: 8px; }
+    .sla-value.green { color: var(--green-45); }
+    .sla-value.red { color: var(--red-45); }
+    .sla-value.yellow { color: var(--yellow-45); }
+    .sla-desc { font-size: 14px; color: var(--muted); }
+    @media (max-width: 768px) { .nav__links { display: none; } .hamburger { display: block; } .legal-section { padding: 40px 20px; } .sla-grid { grid-template-columns: 1fr; } }
+  </style>
+  
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Singularity Research & Development",
+    "url": "https://singularityrd.com"
+  }
+  </script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo" aria-label="Singularity Home">
+          <span class="nav__logo-icon"><svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75"/><circle cx="14" cy="14" r="2.5" fill="white"/></svg></span>
+          <span class="nav__logo-text">Singularity</span>
+        </a>
+        <ul class="nav__links" role="list">
+          <li class="nav__item"><a href="pricing.html">Pricing</a></li>
+          <li class="nav__item"><a href="papers.html">Research</a></li>
+          <li class="nav__item"><a href="about.html">About</a></li>
+          <li class="nav__item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__right"><button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="pricing.html">Pricing</a>
+    <a href="papers.html">Research</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="mailto:info@singularityrd.com" class="mobile-menu__cta">Contact Sales</a>
+  </div>
+
+  <main>
+    <section class="legal-section" aria-labelledby="legal-heading">
+      <div class="legal-inner">
+        <header class="legal-header">
+          <h1 id="legal-heading" class="legal-title">Service Level Agreement</h1>
+          <p class="last-updated">Last updated: March 17, 2025</p>
+          <p class="legal-subtitle">Our commitment to service availability, performance, and support for all customers.</p>
+        </header>
+
+        <div class="legal-content">
+          <h2>Service Commitment</h2>
+          <p>Singularity is committed to providing high-availability, high-performance security services to our customers. This Service Level Agreement (SLA) outlines the service levels we guarantee and the remedies available if we fail to meet those levels.</p>
+
+          <h2>Service Availability</h2>
+          <p>We guarantee the following uptime percentages for our platform services, measured on a monthly basis:</p>
+          
+          <div class="sla-grid">
+            <div class="sla-card">
+              <h4>Starter</h4>
+              <div class="sla-value yellow">99.0%</div>
+              <p class="sla-desc">Monthly uptime guarantee</p>
+            </div>
+            <div class="sla-card">
+              <h4>Growth</h4>
+              <div class="sla-value green">99.9%</div>
+              <p class="sla-desc">Monthly uptime guarantee</p>
+            </div>
+            <div class="sla-card">
+              <h4>Enterprise</h4>
+              <div class="sla-value green">99.99%</div>
+              <p class="sla-desc">Monthly uptime guarantee with dedicated infrastructure</p>
+            </div>
+          </div>
+
+          <h2>Service Credits</h2>
+          <p>If we fail to meet the guaranteed uptime, we will provide service credits as follows:</p>
+          <ul>
+            <li><strong>99.0% - 99.9%:</strong> 10% credit on monthly fees</li>
+            <li><strong>95.0% - 98.9%:</strong> 25% credit on monthly fees</li>
+            <li><strong>90.0% - 94.9%:</strong> 50% credit on monthly fees</li>
+            <li><strong>< 90.0%:</strong> 100% credit on monthly fees</li>
+          </ul>
+          <p>Credits will be applied to your next invoice. To request a credit, contact support@singularityrd.com within 30 days of the service disruption.</p>
+
+          <h2>Support Response Times</h2>
+          <p>We provide the following support response times based on your subscription tier:</p>
+          <table class="cookie-table" style="margin: 32px 0;">
+            <thead>
+              <tr>
+                <th>Severity</th>
+                <th>Starter</th>
+                <th>Growth</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Critical (P1)</strong><br><small>Service down, no workaround</small></td>
+                <td>4 hours</td>
+                <td>1 hour</td>
+                <td>15 minutes</td>
+              </tr>
+              <tr>
+                <td><strong>High (P2)</strong><br><small>Major impact, limited workaround</small></td>
+                <td>8 hours</td>
+                <td>2 hours</td>
+                <td>30 minutes</td>
+              </tr>
+              <tr>
+                <td><strong>Medium (P3)</strong><br><small>Minor impact, workaround available</small></td>
+                <td>24 hours</td>
+                <td>4 hours</td>
+                <td>2 hours</td>
+              </tr>
+              <tr>
+                <td><strong>Low (P4)</strong><br><small>Cosmetic or informational</small></td>
+                <td>48 hours</td>
+                <td>24 hours</td>
+                <td>8 hours</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Exclusions</h2>
+          <p>The SLA does not cover service interruptions caused by:</p>
+          <ul>
+            <li>Force majeure events (acts of God, war, terrorism, etc.)</li>
+            <li>Actions or inactions of the customer or its agents</li>
+            <li>Customer's equipment, software, or network infrastructure</li>
+            <li>Scheduled maintenance (we will provide at least 48 hours notice)</li>
+            <li>Third-party service failures beyond our reasonable control</li>
+          </ul>
+
+          <h2>Scheduled Maintenance</h2>
+          <p>We perform regular maintenance to ensure service quality. Maintenance windows are typically scheduled during off-peak hours (10 PM - 6 AM PST). We will provide advance notice of scheduled maintenance via:</p>
+          <ul>
+            <li>Email notifications to account administrators</li>
+            <li>Status page updates at status.singularityrd.com</li>
+            <li>In-product notifications</li>
+          </ul>
+
+          <h2>Security Commitments</h2>
+          <p>We are committed to maintaining the highest security standards:</p>
+          <ul>
+            <li>All data encrypted in transit (TLS 1.3) and at rest (AES-256)</li>
+            <li>Regular third-party security audits and penetration testing</li>
+            <li>SOC 2 Type II compliance</li>
+            <li>ISO 27001 certification</li>
+            <li>24/7 security monitoring and incident response</li>
+          </ul>
+
+          <h2>Data Backup and Recovery</h2>
+          <p>We maintain comprehensive backup and disaster recovery capabilities:</p>
+          <ul>
+            <li>Automated daily backups of all customer data</li>
+            <li>Backups stored in geographically distributed locations</li>
+            <li>Point-in-time recovery capability for up to 30 days</li>
+            <li>Recovery Time Objective (RTO): 4 hours</li>
+            <li>Recovery Point Objective (RPO): 1 hour</li>
+          </ul>
+
+          <h2>Changes to SLA</h2>
+          <p>We may update this SLA from time to time. Material changes will be communicated to customers with at least 30 days notice. Continued use of our services after such changes constitutes acceptance of the updated SLA.</p>
+
+          <h2>Contact</h2>
+          <p>For SLA-related questions or to request a service credit, please contact:</p>
+          <ul>
+            <li>Email: support@singularityrd.com</li>
+            <li>Phone: +1 (555) 123-4567 (Enterprise customers only)</li>
+            <li>Status Page: status.singularityrd.com</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 500px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; background: url('../footer.png') top center/cover no-repeat; opacity: 0.35; z-index: 0; pointer-events: none;" aria-hidden="true"></div>
+    <div class="footer-inner" style="position: relative; z-index: 10; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 80px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px;">
+        <div>
+          <a href="index.html" class="nav__logo" style="margin-bottom: 24px; display: inline-flex;">
+            <span class="nav__logo-icon" style="width: 24px; height: 24px;">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75"/><circle cx="14" cy="14" r="2.5" fill="white"/></svg>
+            </span>
+            <span class="nav__logo-text" style="font-size: 16px;">Singularity</span>
+          </a>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 24px; max-width: 250px;">Autonomous security for age of autonomous attacks. Built by security researchers.</p>
+          <a href="mailto:info@singularityrd.com" style="display: block; color: var(--white); text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 8px;">info@singularityrd.com</a>
+        </div>
+        <div><h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Company</h4><ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;"><li><a href="about.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">About</a></li><li><a href="blog.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Blog</a></li><li><a href="gender-equity.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Gender Equity</a></li><li><a href="careers.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Careers</a></li><li><a href="contact.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Contact</a></li></ul></div>
+        <div><h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Resources</h4><ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;"><li><a href="papers.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Research Papers</a></li><li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Documentation</a></li><li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">API Reference</a></li><li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Security</a></li><li><a href="index.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">System Status</a></li></ul></div>
+        <div><h4 style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--white);">Legal</h4><ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;"><li><a href="privacy.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Privacy Policy</a></li><li><a href="terms.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Terms of Service</a></li><li><a href="cookies.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Cookie Policy</a></li><li><a href="gdpr.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">GDPR Compliance</a></li><li><a href="sla.html" style="color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s;">Service Level Agreement</a></li></ul></div>
+      </div>
+      <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1200px; padding: 0 40px; z-index: 10;">
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.4);">
+          <span>Copyright &copy; 2025 Singularity Research & Development. All rights reserved.</span>
+          <div style="display: flex; gap: 20px;">
+            <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+            <a href="terms.html" style="color: inherit; text-decoration: none;">Terms of Service</a>
+            <a href="cookies.html" style="color: inherit; text-decoration: none;">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let scrollY = 0;
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('open');
+        if (!isOpen) { scrollY = window.scrollY; document.body.style.overflow = 'hidden'; document.body.style.position = 'fixed'; document.body.style.top = `-${scrollY}px`; document.body.style.width = '100%'; }
+        else { document.body.style.overflow = ''; document.body.style.position = ''; document.body.style.top = ''; document.body.style.width = ''; window.scrollTo(0, scrollY); }
+        hamburger.classList.toggle('active'); mobileMenu.classList.toggle('open');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; document.body.style.position = ''; document.body.style.top = ''; document.body.style.width = ''; window.scrollTo(0, scrollY);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
+
