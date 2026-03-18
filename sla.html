@@ -27,9 +27,9 @@
     .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 300; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
     .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(2) { opacity: 0.7; }
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250; background: rgba(9,9,15,0.97); backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250; background: rgba(9,9,15,0.97); backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0.7; pointer-events: none; transition: opacity 0.3s ease; }
     .mobile-menu.open { opacity: 1; pointer-events: auto; }
     .mobile-menu a { display: block; color: var(--white); text-decoration: none; font-size: 20px; font-weight: 500; padding: 14px 24px; border-radius: 12px; transition: background 0.2s; text-align: center; }
     .mobile-menu a:hover { background: rgba(255,255,255,0.08); }
@@ -75,7 +75,7 @@
     <nav role="navigation" aria-label="Main navigation">
       <div class="nav__left">
         <a href="index.html" class="nav__logo" aria-label="Singularity Home">
-          <span class="nav__logo-icon"><svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.4" opacity="0.5"/><circle cx="14" cy="14" r="7" stroke="white" stroke-width="1.4" opacity="0.75"/><circle cx="14" cy="14" r="2.5" fill="white"/></svg></span>
+          <span class="nav__logo-icon"><img src="singularityfavicon.png" alt="Singularity" style="width: 100%; height: 100%;" /></span>
           <span class="nav__logo-text">Singularity</span>
         </a>
         <ul class="nav__links" role="list">
@@ -234,7 +234,7 @@
   </main>
 
   <footer class="site-footer" style="position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 500px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06);">
-    <div style="position: absolute; bottom: 0; left: 0; right: 0; top: 0; background: url('../footer.png') top center/cover no-repeat; opacity: 0.35; z-index: 0; pointer-events: none;" aria-hidden="true"></div>
+    <img src="footer.png" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; z-index: 0;" alt="footer background" aria-hidden="true">
     <div class="footer-inner" style="position: relative; z-index: 10; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; gap: 80px;">
       <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px;">
         <div>
