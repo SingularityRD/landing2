@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Command — Singularity Security Platform</title>
+  <meta name="description" content="Autonomous red teaming, risk analysis, and executive security insight. Continuous penetration testing with business-context risk scoring." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white: #ffffff; --off-white: rgba(255,255,255,0.85); --muted: rgba(255,255,255,0.55); --accent: #dc2626; --btn-bg: rgba(255,255,255,0.95); }
+    html, body { width: 100%; height: 100%; font-family: 'Inter', sans-serif; background: #09090f; color: var(--white); overflow-x: hidden; }
+    nav { position: relative; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+    .nav__left { display: flex; align-items: center; gap: 36px; }
+    .nav__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
+    .nav__logo-icon { width: 28px; height: 28px; }
+    .nav__logo-text { font-weight: 600; font-size: 17px; }
+    .nav__links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav__links li a { display: flex; align-items: center; gap: 4px; padding: 6px 12px; border-radius: 8px; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; transition: all 0.2s; }
+    .nav__links li a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav__item { position: relative; }
+    .nav__dropdown { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px); width: 320px; background: rgba(18,24,36,0.92); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; padding: 10px; opacity: 0; pointer-events: none; transition: all 0.18s ease; z-index: 200; }
+    .nav__item.open .nav__dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .dropdown__item { display: flex; flex-direction: column; gap: 4px; padding: 12px 16px; border-radius: 10px; text-decoration: none; transition: background 0.15s; }
+    .dropdown__item:hover { background: rgba(255,255,255,0.07); }
+    .dropdown__title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.92); }
+    .dropdown__desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+    .dropdown__cat { font-size: 10px; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 8px 16px 4px; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 300; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; }
+    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 250; background: rgba(9,9,15,0.97); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu a { color: var(--white); text-decoration: none; font-size: 20px; font-weight: 500; padding: 14px 24px; border-radius: 12px; }
+    .mobile-menu a:hover { background: rgba(255,255,255,0.08); }
+    .mobile-menu__cta { margin-top: 20px; background: rgba(255,255,255,0.92) !important; color: #111 !important; font-weight: 600 !important; }
+    .btn-primary { background: var(--btn-bg); color: #111; font-size: 14px; font-weight: 500; padding: 8px 20px; border-radius: 20px; text-decoration: none; transition: all 0.2s; }
+    .btn-primary:hover { background: #fff; transform: translateY(-1px); }
+
+    .hero-section { padding: 120px 80px; display: flex; flex-direction: column; align-items: center; background: linear-gradient(135deg, rgba(9,9,15,0.75) 0%, rgba(42,26,26,0.75) 100%), url('../ascii-2026-03-16-179v8q.png') center/cover no-repeat; background-blend-mode: multiply; }
+    .hero-inner { width: 100%; max-width: 1200px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.3); padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; }
+    .hero-title { font-family: 'Outfit', sans-serif; font-size: clamp(48px, 6vw, 72px); font-weight: 500; line-height: 1.05; margin-bottom: 24px; }
+    .hero-title em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; color: var(--accent); }
+    .hero-subtitle { font-size: clamp(18px, 2vw, 22px); font-weight: 300; color: var(--muted); max-width: 800px; margin: 0 auto 48px; line-height: 1.6; }
+
+    .features-section { padding: 80px 80px; background: linear-gradient(180deg, rgba(5,8,15,0.8) 0%, rgba(9,9,15,0.75) 100%), url('../ascii-2026-03-16-831a2y.png') center/cover no-repeat; background-blend-mode: overlay; background-attachment: fixed; }
+    .features-inner { max-width: 1200px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 60px; }
+    .feature-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; transition: all 0.3s ease; }
+    .feature-card:hover { transform: translateY(-4px); border-color: rgba(220, 38, 38, 0.3); box-shadow: 0 20px 40px rgba(220, 38, 38, 0.1); }
+    .feature-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent), #b91c1c); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
+    .feature-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+    .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .pricing-section { padding: 80px 80px; background: #09090f; }
+    .pricing-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .pricing-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px; max-width: 500px; margin: 40px auto 0; }
+    .price { font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 600; margin-bottom: 8px; }
+    .price-note { font-size: 16px; color: var(--muted); margin-bottom: 24px; }
+
+    footer { position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 500px; background: #05080f; border-top: 1px solid rgba(255,255,255,0.06); }
+    footer img { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; z-index: 0; }
+    .footer-inner { position: relative; z-index: 10; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .hamburger { display: block; }
+      .hero-section { padding: 80px 20px; }
+      .features-section { padding: 60px 20px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .pricing-section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav role="navigation">
+    <div class="nav__left">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-icon"><img src="../singularityfavicon.png" alt="Singularity" style="width: 100%; height: 100%;" /></span>
+        <span class="nav__logo-text">Singularity</span>
+      </a>
+      <ul class="nav__links">
+        <li class="nav__item" id="navProducts">
+          <a href="javascript:void(0)">Products <span style="opacity:0.6;font-size:10px;">▾</span></a>
+          <div class="nav__dropdown">
+            <div class="dropdown__cat">Security Intelligence</div>
+            <a class="dropdown__item" href="../products/security-command.html"><span class="dropdown__title">Security Command (vCISO)</span><span class="dropdown__desc">Autonomous red teaming and executive insight</span></a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="../pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="nav__right">
+      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="mailto:info@singularityrd.com" class="mobile-menu__cta">Contact Sales</a>
+  </div>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-inner">
+        <div class="hero-badge">🎯 Security Intelligence</div>
+        <h1 class="hero-title">Autonomous <em>Red Teaming</em></h1>
+        <p class="hero-subtitle">Security Command continuously attacks your own infrastructure, analyzes real risk exposure, and delivers executive-ready security intelligence. Our AI red team platform has identified vulnerabilities affecting over 1 billion people. 3× more attack paths discovered vs. traditional pentesting.</p>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="features-inner">
+        <h2 class="hero-title" style="font-size: clamp(36px, 4vw, 48px); text-align: center; margin-bottom: 60px;">Intelligence That <em>Acts</em></h2>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🎭</div>
+            <h3 class="feature-title">Continuous Red Teaming</h3>
+            <p class="feature-desc">Automated penetration testing across network, application, and cloud. Continuous operation, not point-in-time annual pentests. Social engineering simulation included.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3 class="feature-title">Business-Context Risk</h3>
+            <p class="feature-desc">CVEs translated into financial exposure. Executive dashboards with board-ready risk posture summaries. Attack path analysis with blast radius modeling.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <h3 class="feature-title">Automated Remediation</h3>
+            <p class="feature-desc">Integration with SIEM, SOAR, and ticketing for automated remediation workflows. When vulnerabilities are found, fixes are automatically deployed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <div class="pricing-inner">
+        <h2 class="hero-title" style="font-size: clamp(36px, 4vw, 48px); margin-bottom: 60px;">Accessible <em>Pricing</em></h2>
+        <div class="pricing-card">
+          <div class="price">From $9,900/yr</div>
+          <p class="price-note">Up to 500 assets, continuous testing. Enterprise: $19,900/yr (unlimited). vCISO add-on: $3,900/yr. vs. Picus at $30K/yr, Pentera at $40K/yr.</p>
+          <a href="mailto:info@singularityrd.com" class="btn-primary">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="../footer.png" alt="" />
+    <div class="footer-inner">
+      <p style="font-size: 14px; color: rgba(255,255,255,0.5);">© 2026 Singularity Research & Development. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navItems = document.querySelectorAll('.nav__item');
+    navItems.forEach(item => {
+      const trigger = item.querySelector('a');
+      if (trigger && item.querySelector('.nav__dropdown')) {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          const isOpen = item.classList.contains('open');
+          navItems.forEach(i => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav__item')) navItems.forEach(i => i.classList.remove('open'));
+    });
+
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let scrollY = 0;
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('open');
+        if (!isOpen) {
+          scrollY = window.scrollY;
+          document.body.style.overflow = 'hidden';
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${scrollY}px`;
+        } else {
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          window.scrollTo(0, scrollY);
+        }
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

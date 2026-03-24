@@ -858,6 +858,217 @@
                 .footer-inner > div[style*="grid-template-columns: 2fr"] {
                     grid-template-columns: 1fr !important;
                 }
+
+                .hero__content {
+                    padding: 80px 16px 100px !important;
+                }
+
+                .hero__cta {
+                    padding: 14px 28px !important;
+                    font-size: 14px !important;
+                }
+            }
+
+            /* ─── COMPREHENSIVE MOBILE FIXES ──────────────────────── */
+
+            /* Tablet adjustments */
+            @media (max-width: 1024px) {
+                .nav__right .btn-ghost,
+                .nav__right .btn-primary {
+                    display: none;
+                }
+
+                .feature-inner {
+                    grid-template-columns: 1fr !important;
+                    gap: 48px !important;
+                }
+
+                .feature-section {
+                    padding: 60px 40px 60px !important;
+                }
+            }
+
+            /* Mobile adjustments */
+            @media (max-width: 768px) {
+                /* Hero logo cloud at bottom */
+                .hero .hero__logos {
+                    display: none !important;
+                }
+
+                /* Hero content spacing */
+                .hero__content {
+                    padding: 100px 20px 80px !important;
+                    justify-content: center !important;
+                }
+
+                /* Stats section */
+                .stats-section {
+                    padding: 48px 20px 60px !important;
+                }
+
+                /* Feature section */
+                .feature-section {
+                    padding: 48px 20px 60px !important;
+                }
+
+                .feature-inner {
+                    grid-template-columns: 1fr !important;
+                    gap: 40px !important;
+                }
+
+                /* Giga features - remove fixed width */
+                .giga-features {
+                    width: 100% !important;
+                    grid-template-columns: 1fr !important;
+                }
+
+                .giga-feature {
+                    border-left: none !important;
+                    border-top: 1px solid rgba(255, 255, 255, 0.06);
+                    padding: 20px 0 !important;
+                }
+
+                /* Giga box reverse layout fix */
+                .giga-box[style*="grid-template-columns: 2fr 1fr"] {
+                    grid-template-columns: 1fr !important;
+                }
+
+                /* Canvas mockup */
+                .canvas-mockup {
+                    min-height: 260px !important;
+                }
+
+                /* Insights panel overflow fix */
+                .insights-panel {
+                    width: 90% !important;
+                }
+
+                .insights-panel__header {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    gap: 8px !important;
+                }
+
+                .insights-actions {
+                    flex-wrap: wrap !important;
+                }
+
+                .insights-panel__metric {
+                    font-size: 22px !important;
+                }
+
+                /* Test results panel overflow */
+                .test-results-panel {
+                    width: 92% !important;
+                }
+
+                .test-metrics {
+                    grid-template-columns: 1fr !important;
+                }
+
+                .test-table__header,
+                .test-table__row {
+                    grid-template-columns: 2fr 1fr !important;
+                }
+
+                .test-table__header > div:last-child,
+                .test-table__row > div:last-child {
+                    display: none;
+                }
+
+                /* Bento grid */
+                .giga-inner > div[style*="grid-template-columns: repeat(3"] {
+                    grid-template-columns: 1fr !important;
+                }
+
+                /* Remove grid-column span on mobile */
+                .giga-inner > div[style*="repeat(3"] > div[style*="grid-column: span 2"] {
+                    grid-column: span 1 !important;
+                }
+
+                /* Bento inner grids */
+                div[style*="grid-template-columns: 1fr 1fr;"][style*="gap: 8px 24px"] {
+                    grid-template-columns: 1fr !important;
+                }
+
+                div[style*="grid-template-columns: 1fr 1fr 1fr;"][style*="gap: 8px 24px"] {
+                    grid-template-columns: 1fr !important;
+                }
+
+                /* Footer */
+                .footer-inner {
+                    gap: 48px !important;
+                }
+
+                .footer-inner > div[style*="grid-template-columns: 2fr"] {
+                    grid-template-columns: 1fr 1fr !important;
+                    gap: 32px !important;
+                }
+
+                .site-footer {
+                    padding-bottom: 400px !important;
+                }
+
+                /* Footer copyright bar */
+                .site-footer > div:last-child > div {
+                    flex-direction: column !important;
+                    gap: 12px !important;
+                    text-align: center !important;
+                }
+
+                .site-footer > div:last-child > div > div {
+                    justify-content: center !important;
+                }
+
+                /* Canvas dialog */
+                .canvas-dialog {
+                    width: 90% !important;
+                }
+
+                .canvas-dialog__tabs {
+                    overflow-x: auto !important;
+                    -webkit-overflow-scrolling: touch;
+                }
+
+                /* Marquee logo bar in hero */
+                .hero > div[style*="bottom: 80px"] {
+                    bottom: 40px !important;
+                    padding: 0 16px !important;
+                }
+
+                .hero > div[style*="bottom: 80px"] > div[style*="max-width: 860px"] {
+                    border-radius: 20px !important;
+                    padding: 10px 0 !important;
+                }
+
+                .hero > div[style*="bottom: 80px"] p {
+                    font-size: 9px !important;
+                    letter-spacing: 0.08em !important;
+                }
+            }
+
+            /* Small mobile */
+            @media (max-width: 480px) {
+                .footer-inner > div[style*="grid-template-columns: 2fr"] {
+                    grid-template-columns: 1fr !important;
+                }
+
+                .stats-numbers {
+                    flex-direction: column !important;
+                    gap: 32px !important;
+                }
+
+                .canvas-left__desc {
+                    font-size: 14px !important;
+                }
+
+                .giga-header__headline {
+                    font-size: 28px !important;
+                }
+
+                .hero > div[style*="bottom: 80px"] {
+                    display: none !important;
+                }
             }
         </style>
         <link rel="icon" href="singularityfavicon.png" type="image/png" />
@@ -2527,6 +2738,77 @@
                     padding-right: 28px;
                 }
             }
+
+            @media (max-width: 768px) {
+                .stats-section {
+                    padding: 48px 20px !important;
+                }
+
+                .feature-section {
+                    padding: 48px 20px !important;
+                }
+
+                .feature-inner {
+                    grid-template-columns: 1fr !important;
+                    gap: 40px !important;
+                }
+
+                .giga-section {
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+
+                .giga-box {
+                    padding: 20px !important;
+                    gap: 32px !important;
+                }
+
+                .canvas-left__btn {
+                    margin-bottom: 20px !important;
+                }
+
+                .insights-panel {
+                    padding: 12px !important;
+                }
+
+                .insights-select {
+                    font-size: 9px !important;
+                    padding: 4px 8px !important;
+                }
+
+                .insights-btn-white {
+                    font-size: 9px !important;
+                    padding: 4px 8px !important;
+                }
+
+                .insights-panel__title {
+                    font-size: 13px !important;
+                }
+
+                .insight-row__header {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    gap: 4px !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .giga-box {
+                    padding: 16px !important;
+                }
+
+                .test-metric__val {
+                    font-size: 16px !important;
+                }
+
+                .test-results-panel__body {
+                    padding: 12px !important;
+                }
+
+                .test-results-title {
+                    font-size: 12px !important;
+                }
+            }
         </style>
 
         <div class="page">
@@ -3805,101 +4087,114 @@
                             <!-- Box Left: Mockup -->
                             <div class="canvas-mockup">
                                 <div class="canvas-mockup__overlay"></div>
-                                <div class="insights-panel">
-                                    <div class="insights-panel__header">
-                                        <div class="insights-select">
-                                            Predictive Vulnerability Analysis ▾
+                                <div class="test-results-panel">
+                                    <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                            <div class="test-header-avatar" style="background:linear-gradient(135deg,#10b981,#06b6d4)"></div>
+                                            <span class="test-header-title">Global Telemetry Feed ▾</span>
                                         </div>
-                                        <div class="insights-actions">
-                                            <div class="insights-select">
-                                                Global ▾
+                                        <div class="test-header-right">
+                                            <span style="color:#10b981;font-weight:500">Live</span>
+                                        </div>
+                                    </div>
+                                    <div class="test-results-panel__body">
+                                        <div class="test-results-title">Real-Time Health Monitoring</div>
+                                        <div class="test-metrics">
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Active Sensors</div>
+                                                <div class="test-metric__val">24,891</div>
+                                                <div class="test-metric__sub">Across 14 regions</div>
                                             </div>
-                                            <div class="insights-btn-white">
-                                                ✧ Run diagnostics
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Uptime</div>
+                                                <div class="test-metric__val">99.97%</div>
+                                                <div class="test-metric__sub">30-day rolling average</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Anomalies / hr</div>
+                                                <div class="test-metric__val">1.2</div>
+                                                <div class="test-metric__sub">↓ 68% vs. baseline</div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="insights-panel__title">
-                                        System Health & Uptime
-                                    </div>
-                                    <div class="insights-panel__metric">
-                                        99.9% <span>2.4%</span>
-                                    </div>
-                                    <div class="insights-panel__sub">
-                                        14-day failure prediction window
-                                    </div>
-
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag"
-                                                >Hardware Degradation</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Replace primary cluster cooling
-                                                unit</span
-                                            >
-                                        </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 80%"
-                                            ></div>
+                                        <div class="test-table">
+                                            <div class="test-table__header"><div>Signal</div><div>Status</div><div>Trend</div></div>
+                                            <div class="test-table__row"><div>CPU Thermal Envelope</div><div class="status-passed">Normal</div><div>Stable</div></div>
+                                            <div class="test-table__row"><div>Network Latency (P99)</div><div class="status-passed">2.1ms</div><div>↓ 0.4ms</div></div>
+                                            <div class="test-table__row"><div>Disk I/O Saturation</div><div class="status-deviated">Elevated</div><div>↑ 12%</div></div>
                                         </div>
                                     </div>
-
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag yellow"
-                                                >Security Vulnerability</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Patch zero-day in edge router
-                                                firmware</span
-                                            >
+                                </div>
+                                <div class="test-results-panel">
+                                    <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                            <div class="test-header-avatar" style="background:linear-gradient(135deg,#f97316,#eab308)"></div>
+                                            <span class="test-header-title">14-Day Failure Forecast ▾</span>
                                         </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 45%"
-                                            ></div>
+                                        <div class="test-header-right">
+                                            <span style="color:#f97316;font-weight:500">3 Warnings</span>
                                         </div>
                                     </div>
-
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag"
-                                                >Resource Exhaustion</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Resize database instance before
-                                                peak load</span
-                                            >
+                                    <div class="test-results-panel__body">
+                                        <div class="test-results-title">Predicted Failures</div>
+                                        <div class="test-metrics">
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Expected Failures</div>
+                                                <div class="test-metric__val">3</div>
+                                                <div class="test-metric__sub">Next 14 days</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Confidence</div>
+                                                <div class="test-metric__val">96.2%</div>
+                                                <div class="test-metric__sub">Model accuracy</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Prevented YTD</div>
+                                                <div class="test-metric__val">127</div>
+                                                <div class="test-metric__sub">$4.2M saved</div>
+                                            </div>
                                         </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 30%"
-                                            ></div>
+                                        <div class="test-table">
+                                            <div class="test-table__header"><div>Asset</div><div>Forecast</div><div>ETA</div></div>
+                                            <div class="test-table__row"><div>US-East DB Cluster</div><div style="color:#ef4444;font-weight:500">Storage Exhaustion</div><div>3 days</div></div>
+                                            <div class="test-table__row"><div>Auth Gateway</div><div style="color:#eab308;font-weight:500">Cert Expiry</div><div>11 days</div></div>
+                                            <div class="test-table__row"><div>Core Switches</div><div style="color:#f97316;font-weight:500">Buffer Overflow Risk</div><div>8 days</div></div>
                                         </div>
                                     </div>
-
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag"
-                                                >Policy Drift</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Re-align IAM roles with
-                                                Principle of Least
-                                                Privilege</span
-                                            >
+                                </div>
+                                <div class="test-results-panel active">
+                                    <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                            <div class="test-header-avatar" style="background:linear-gradient(135deg,#a855f7,#ec4899)"></div>
+                                            <span class="test-header-title">Auto-Remediation Engine ▾</span>
                                         </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 15%"
-                                            ></div>
+                                        <div class="test-header-right">
+                                            <span style="color:#10b981;font-weight:500">Executing</span>
+                                        </div>
+                                    </div>
+                                    <div class="test-results-panel__body">
+                                        <div class="test-results-title">Autonomous Fix Pipeline</div>
+                                        <div class="test-metrics">
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Auto-Fixed</div>
+                                                <div class="test-metric__val">94%</div>
+                                                <div class="test-metric__sub">No human needed</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">MTTR</div>
+                                                <div class="test-metric__val">4.2min</div>
+                                                <div class="test-metric__sub">↓ from 6.4 hours</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Rollback Rate</div>
+                                                <div class="test-metric__val">0.1%</div>
+                                                <div class="test-metric__sub">Digital twin validated</div>
+                                            </div>
+                                        </div>
+                                        <div class="test-table">
+                                            <div class="test-table__header"><div>Action</div><div>Status</div><div>Impact</div></div>
+                                            <div class="test-table__row"><div>Scale DB storage (+500GB)</div><div class="status-passed">Complete</div><div>Zero downtime</div></div>
+                                            <div class="test-table__row"><div>Auto-renew TLS cert</div><div class="status-passed">Scheduled</div><div>Transparent</div></div>
+                                            <div class="test-table__row"><div>Patch switch firmware</div><div class="status-deviated">Pending approval</div><div>Maintenance window</div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -4172,98 +4467,116 @@
                             <div class="canvas-mockup">
                                 <div class="canvas-mockup__overlay"></div>
 
-                                <div class="insights-panel">
-                                    <div class="insights-panel__header">
-                                        <div class="insights-select">
-                                            Vulnerability Prediction (Global) ▾
+                                <div class="test-results-panel active">
+                                    <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                            <div class="test-header-avatar" style="background:linear-gradient(135deg,#ef4444,#f97316)"></div>
+                                            <span class="test-header-title">Zero-Day Discovery Feed ▾</span>
                                         </div>
-                                        <div class="insights-actions">
-                                            <div class="insights-select">
-                                                All regions ▾
+                                        <div class="test-header-right">
+                                            <span style="color:#ef4444;font-weight:500">14 Active</span>
+                                        </div>
+                                    </div>
+                                    <div class="test-results-panel__body">
+                                        <div class="test-results-title">Undisclosed Vulnerabilities</div>
+                                        <div class="test-metrics">
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Zero-Days Found</div>
+                                                <div class="test-metric__val">147</div>
+                                                <div class="test-metric__sub">Lifetime CVEs filed</div>
                                             </div>
-                                            <div class="insights-btn-white">
-                                                ✧ Update feed
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Users Impacted</div>
+                                                <div class="test-metric__val">1B+</div>
+                                                <div class="test-metric__sub">Across all discoveries</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Avg Discovery Lead</div>
+                                                <div class="test-metric__val">38d</div>
+                                                <div class="test-metric__sub">Before public disclosure</div>
                                             </div>
                                         </div>
+                                        <div class="test-table">
+                                            <div class="test-table__header"><div>Target</div><div>Severity</div><div>Impact</div></div>
+                                            <div class="test-table__row"><div>Amazon Web Services</div><div style="color:#ef4444;font-weight:500">Critical</div><div>310M+ users</div></div>
+                                            <div class="test-table__row"><div>Oracle Cloud</div><div style="color:#ef4444;font-weight:500">Critical</div><div>200M+ users</div></div>
+                                            <div class="test-table__row"><div>Alibaba Cloud</div><div style="color:#f97316;font-weight:500">High</div><div>150M+ users</div></div>
+                                        </div>
                                     </div>
+                                </div>
 
-                                    <div class="insights-panel__title">
-                                        Impact and Scale
+                                <div class="test-results-panel">
+                                    <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                            <div class="test-header-avatar" style="background:linear-gradient(135deg,#8b5cf6,#6366f1)"></div>
+                                            <span class="test-header-title">Training Data Pipeline ▾</span>
+                                        </div>
+                                        <div class="test-header-right">
+                                            <span style="color:#8b5cf6;font-weight:500">Updating</span>
+                                        </div>
                                     </div>
-                                    <div class="insights-panel__metric">
-                                        1B+ <span>Verified</span>
+                                    <div class="test-results-panel__body">
+                                        <div class="test-results-title">Offensive Intelligence Corpus</div>
+                                        <div class="test-metrics">
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Attack Patterns</div>
+                                                <div class="test-metric__val">12.4K</div>
+                                                <div class="test-metric__sub">Unique TTPs cataloged</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Data Sources</div>
+                                                <div class="test-metric__val">Proprietary</div>
+                                                <div class="test-metric__sub">Not public datasets</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Model Refresh</div>
+                                                <div class="test-metric__val">Real-time</div>
+                                                <div class="test-metric__sub">Continuous fine-tuning</div>
+                                            </div>
+                                        </div>
+                                        <div class="test-table">
+                                            <div class="test-table__header"><div>Category</div><div>Coverage</div><div>Source</div></div>
+                                            <div class="test-table__row"><div>Lateral Movement TTPs</div><div class="status-passed">98%</div><div>Live red teams</div></div>
+                                            <div class="test-table__row"><div>Exploit Chains</div><div class="status-passed">94%</div><div>Original research</div></div>
+                                            <div class="test-table__row"><div>Social Engineering</div><div class="status-deviated">87%</div><div>Field operations</div></div>
+                                        </div>
                                     </div>
-                                    <div class="insights-panel__sub">
-                                        People affected by vulnerabilities we
-                                        found
-                                    </div>
+                                </div>
 
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag"
-                                                >Critical Impact</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Amazon Web Services</span
-                                            >
+                                <div class="test-results-panel">
+                                    <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                            <div class="test-header-avatar" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"></div>
+                                            <span class="test-header-title">CVE Track Record ▾</span>
                                         </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 100%"
-                                            ></div>
+                                        <div class="test-header-right">
+                                            <span style="color:#10b981;font-weight:500">Verified</span>
                                         </div>
                                     </div>
-
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag yellow"
-                                                >High Impact</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Alibaba Cloud</span
-                                            >
+                                    <div class="test-results-panel__body">
+                                        <div class="test-results-title">Validated Discoveries</div>
+                                        <div class="test-metrics">
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Organizations</div>
+                                                <div class="test-metric__val">100+</div>
+                                                <div class="test-metric__sub">Fortune 500 & gov</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Platforms</div>
+                                                <div class="test-metric__val">14</div>
+                                                <div class="test-metric__sub">Major cloud & OS vendors</div>
+                                            </div>
+                                            <div class="test-metric">
+                                                <div class="test-metric__title">Bug Bounties</div>
+                                                <div class="test-metric__val">$2.1M</div>
+                                                <div class="test-metric__sub">Total awarded</div>
+                                            </div>
                                         </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 85%"
-                                            ></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag"
-                                                >Critical Impact</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Oracle</span
-                                            >
-                                        </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 70%"
-                                            ></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="insight-row">
-                                        <div class="insight-row__header">
-                                            <span class="insight-tag"
-                                                >Platform</span
-                                            >
-                                            <span class="insight-row__desc"
-                                                >Ubuntu Core + 96 more
-                                                organizations</span
-                                            >
-                                        </div>
-                                        <div class="insight-bar">
-                                            <div
-                                                class="insight-bar-fill"
-                                                style="width: 90%"
-                                            ></div>
+                                        <div class="test-table">
+                                            <div class="test-table__header"><div>Vendor</div><div>Status</div><div>Scope</div></div>
+                                            <div class="test-table__row"><div>Huawei Infrastructure</div><div class="status-passed">Patched</div><div>Global fleet</div></div>
+                                            <div class="test-table__row"><div>Red Hat Enterprise</div><div class="status-passed">Patched</div><div>All versions</div></div>
+                                            <div class="test-table__row"><div>Ubuntu / Canonical</div><div class="status-passed">Patched</div><div>LTS releases</div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -4729,15 +5042,132 @@
                                                 <div>87%</div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                                        </div>
+                                        </div>
 
-            <!-- ══════════════ PRODUCT SUITE — BENTO GRID ══════════════ -->
+                                        <!-- Threat Hunting Panel -->
+                                        <div class="test-results-panel">
+                                        <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                           <div class="test-header-avatar" style="background:linear-gradient(135deg,#ef4444,#dc2626)"></div>
+                                           <span class="test-header-title">Dark Web Intelligence ▾</span>
+                                        </div>
+                                        <div class="test-header-right">
+                                           <span style="color:#ef4444;font-weight:500">Scanning</span>
+                                        </div>
+                                        </div>
+                                        <div class="test-results-panel__body">
+                                        <div class="test-results-title">Threat Hunting Results</div>
+                                        <div class="test-metrics">
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">Forums Monitored</div>
+                                               <div class="test-metric__val">2,400+</div>
+                                               <div class="test-metric__sub">Dark web & paste sites</div>
+                                           </div>
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">Credential Leaks</div>
+                                               <div class="test-metric__val">0</div>
+                                               <div class="test-metric__sub">Your domain — clean</div>
+                                           </div>
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">Threat Actors</div>
+                                               <div class="test-metric__val">3</div>
+                                               <div class="test-metric__sub">Tracking your sector</div>
+                                           </div>
+                                        </div>
+                                        <div class="test-table">
+                                           <div class="test-table__header"><div>Threat Actor</div><div>Activity</div><div>Risk</div></div>
+                                           <div class="test-table__row"><div>APT-41 (Winnti)</div><div style="color:#ef4444;font-weight:500">Active campaign</div><div>High</div></div>
+                                           <div class="test-table__row"><div>RansomHub</div><div style="color:#f97316;font-weight:500">Reconnaissance</div><div>Medium</div></div>
+                                           <div class="test-table__row"><div>LockBit 4.0</div><div style="color:#eab308;font-weight:500">Dormant</div><div>Low</div></div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+                                        <!-- Compliance Automation Panel -->
+                                        <div class="test-results-panel">
+                                        <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                           <div class="test-header-avatar" style="background:linear-gradient(135deg,#10b981,#059669)"></div>
+                                           <span class="test-header-title">Compliance Engine ▾</span>
+                                        </div>
+                                        <div class="test-header-right">
+                                           <span style="color:#10b981;font-weight:500">Audit Ready</span>
+                                        </div>
+                                        </div>
+                                        <div class="test-results-panel__body">
+                                        <div class="test-results-title">Auto-Generated Evidence</div>
+                                        <div class="test-metrics">
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">SOC 2 Timeline</div>
+                                               <div class="test-metric__val" style="color:#10b981">14 days</div>
+                                               <div class="test-metric__sub">vs. industry avg 6mo</div>
+                                           </div>
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">Controls Mapped</div>
+                                               <div class="test-metric__val">412</div>
+                                               <div class="test-metric__sub">Across 5 frameworks</div>
+                                           </div>
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">Evidence Artifacts</div>
+                                               <div class="test-metric__val">1,847</div>
+                                               <div class="test-metric__sub">Auto-collected</div>
+                                           </div>
+                                        </div>
+                                        <div class="test-table">
+                                           <div class="test-table__header"><div>Framework</div><div>Status</div><div>Coverage</div></div>
+                                           <div class="test-table__row"><div>SOC 2 Type II</div><div class="status-passed">Certified</div><div>100%</div></div>
+                                           <div class="test-table__row"><div>NIS2 Directive</div><div class="status-passed">Compliant</div><div>98%</div></div>
+                                           <div class="test-table__row"><div>EU AI Act</div><div class="status-deviated">In Progress</div><div>87%</div></div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+                                        <!-- Board Reporting Panel -->
+                                        <div class="test-results-panel">
+                                        <div class="test-results-panel__header">
+                                        <div class="test-header-left">
+                                           <div class="test-header-avatar" style="background:linear-gradient(135deg,#3b82f6,#8b5cf6)"></div>
+                                           <span class="test-header-title">Executive Brief ▾</span>
+                                        </div>
+                                        <div class="test-header-right">
+                                           <span style="color:#3b82f6;font-weight:500">Q1 2026</span>
+                                        </div>
+                                        </div>
+                                        <div class="test-results-panel__body">
+                                        <div class="test-results-title">Board-Ready Summary</div>
+                                        <div class="test-metrics">
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">Risk Score</div>
+                                               <div class="test-metric__val" style="color:#10b981">Low</div>
+                                               <div class="test-metric__sub">↓ from Medium (Q4)</div>
+                                           </div>
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">Incidents</div>
+                                               <div class="test-metric__val">0</div>
+                                               <div class="test-metric__sub">Reportable breaches</div>
+                                           </div>
+                                           <div class="test-metric">
+                                               <div class="test-metric__title">ROI</div>
+                                               <div class="test-metric__val">340%</div>
+                                               <div class="test-metric__sub">Security investment</div>
+                                           </div>
+                                        </div>
+                                        <div class="test-table">
+                                           <div class="test-table__header"><div>Category</div><div>Trend</div><div>Action</div></div>
+                                           <div class="test-table__row"><div>Attack Surface</div><div class="status-passed">Shrinking</div><div>Continue</div></div>
+                                           <div class="test-table__row"><div>Response Time</div><div class="status-passed">75ms avg</div><div>Optimized</div></div>
+                                           <div class="test-table__row"><div>Insurance Premium</div><div class="status-passed">↓ 22%</div><div>Renewal locked</div></div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </section>
+                                        </div>
+
+                                        <!-- ══════════════ PRODUCT SUITE — BENTO GRID ══════════════ -->
             <div style="position: relative; background: #09090f; z-index: 10">
                 <!-- Spanning ASCII Background -->
                 <div
@@ -6336,48 +6766,43 @@
                 });
             }
 
-            // ── Mobile Menu ─────────────────────────────────────────────
-            const hamburger = document.getElementById("hamburgerBtn");
-            const mobileMenu = document.getElementById("mobileMenu");
-            let scrollY = 0;
+            // ── Mobile Menu (enhanced) ──────────────────────────────────
+            const hamburger2 = document.getElementById("hamburgerBtn");
+            const mobileMenu2 = document.getElementById("mobileMenu");
+            let savedScrollY = 0;
 
-            if (hamburger && mobileMenu) {
-                hamburger.addEventListener("click", () => {
-                    const isOpen = mobileMenu.classList.contains("open");
+            if (hamburger2 && mobileMenu2) {
+                hamburger2.addEventListener("click", () => {
+                    const isOpen = mobileMenu2.classList.contains("open");
 
                     if (!isOpen) {
-                        // Store scroll position
-                        scrollY = window.scrollY;
+                        savedScrollY = window.scrollY;
                         document.body.style.overflow = "hidden";
                         document.body.style.position = "fixed";
-                        document.body.style.top = `-${scrollY}px`;
+                        document.body.style.top = `-${savedScrollY}px`;
                         document.body.style.width = "100%";
                     } else {
-                        // Restore scroll position
                         document.body.style.overflow = "";
                         document.body.style.position = "";
                         document.body.style.top = "";
                         document.body.style.width = "";
-                        window.scrollTo(0, scrollY);
+                        window.scrollTo(0, savedScrollY);
                     }
 
-                    hamburger.classList.toggle("active");
-                    mobileMenu.classList.toggle("open");
+                    hamburger2.classList.toggle("active");
+                    mobileMenu2.classList.toggle("open");
                 });
 
-                // Close menu when clicking links
-                mobileMenu.querySelectorAll("a").forEach((link) => {
+                mobileMenu2.querySelectorAll("a").forEach((link) => {
                     link.addEventListener("click", () => {
-                        hamburger.classList.remove("active");
-                        mobileMenu.classList.remove("open");
-                        hamburger.setAttribute("aria-expanded", "false");
+                        hamburger2.classList.remove("active");
+                        mobileMenu2.classList.remove("open");
 
-                        // Restore body scroll
                         document.body.style.overflow = "";
                         document.body.style.position = "";
                         document.body.style.top = "";
                         document.body.style.width = "";
-                        window.scrollTo(0, scrollY);
+                        window.scrollTo(0, savedScrollY);
                     });
                 });
             }
